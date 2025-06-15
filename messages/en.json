@@ -1,0 +1,61 @@
+{
+  "GameCard": {
+    "new": "New",
+    "featured": "Featured",
+    "defaultTitle": "Game Title",
+    "playCount": "{count} plays",
+    "noDescription": "No description available.",
+    "playGame": "Play Game"
+  },
+  "Navigation": {
+    "home": "Home",
+    "games": "Games",
+    "categories": "Categories",
+    "about": "About",
+    "search": "Search games..."
+  },
+  "HomePage": {
+    "title": "Welcome to Gaming Hub",
+    "subtitle": "Discover and play the best online games",
+    "featuredGames": "Featured Games",
+    "newGames": "New Games",
+    "popularGames": "Popular Games",
+    "viewAll": "View All"
+  },
+  "GamePage": {
+    "play": "Play Now",
+    "share": "Share",
+    "addToFavorites": "Add to Favorites",
+    "relatedGames": "Related Games",
+    "comments": "Comments",
+    "leaveComment": "Leave a comment"
+  },
+  "Categories": {
+    "action": "Action",
+    "adventure": "Adventure",
+    "puzzle": "Puzzle",
+    "strategy": "Strategy",
+    "sports": "Sports",
+    "racing": "Racing",
+    "rpg": "RPG",
+    "shooter": "Shooter"
+  },
+  "Footer": {
+    "siteTitle": "Games Portal",
+    "siteDescription": "Discover and play the best online games, no download required, play instantly.",
+    "quickLinks": "Quick Links",
+    "gameCategories": "Game Categories",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "cookiePolicy": "Cookie Policy",
+    "allRightsReserved": "All rights reserved",
+    "language": "Language",
+    "actionGames": "Action Games",
+    "adventureGames": "Adventure Games",
+    "puzzleGames": "Puzzle Games",
+    "racingGames": "Racing Games",
+    "sportsGames": "Sports Games"
+  }
+} 

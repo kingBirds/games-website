@@ -1,0 +1,50 @@
+{
+  "games": {
+    "minecraft": {
+      "description": "Minecraft is a sandbox game developed by Mojang Studios. Players interact with a fully modifiable three-dimensional environment made of blocks and entities. Its diverse gameplay lets you create, explore, gather resources, craft items, and combat.",
+      "howToPlay": "Start by punching trees to collect wood, then craft tools and build a shelter before night falls. Explore caves for resources, farm for food, and expand your world.",
+      "tips": "Always carry torches, food, and a bed. Build a secure shelter for the night and create landmarks to avoid getting lost."
+    },
+    "fortnite": {
+      "description": "Fortnite is a free-to-play Battle Royale game with numerous game modes for every type of game player. Watch a concert, build an island or fight.",
+      "howToPlay": "Drop onto the island, gather weapons and resources, and be the last one standing. Build structures for protection and use the storm circle as a guide.",
+      "tips": "Learn to build quickly, always keep shield potions, and position yourself strategically as the storm circle shrinks."
+    },
+    "amongus": {
+      "description": "Among Us is an online multiplayer social deduction game. Crewmates work together to complete tasks while trying to identify the Impostors among them.",
+      "howToPlay": "Complete tasks around the map as a Crewmate, or sabotage and eliminate players as an Impostor without getting caught.",
+      "tips": "Pay attention to other players' movements, use security cameras, and call emergency meetings when you find something suspicious."
+    },
+    "roblox": {
+      "description": "Roblox is an online game platform and game creation system that allows users to program games and play games created by other users.",
+      "howToPlay": "Browse thousands of games created by other users, or use Roblox Studio to create your own experiences.",
+      "tips": "Try different games to find your favorites, make friends to play with, and consider learning Roblox Studio to create your own games."
+    }
+  },
+  "categories": {
+    "action": {
+      "title": "Action Games",
+      "description": "Experience exciting action games that challenge your reflexes. Action games focus on challenging the player's reflexes, hand-eye coordination, and reaction time."
+    },
+    "adventure": {
+      "title": "Adventure Games",
+      "description": "Embark on epic journeys and stories. Adventure games focus on exploration, puzzle-solving, and narrative storytelling."
+    },
+    "puzzle": {
+      "title": "Puzzle Games",
+      "description": "Exercise your brain and solve interesting puzzles. Puzzle games focus on logical and conceptual challenges, often with increasing difficulty levels."
+    },
+    "racing": {
+      "title": "Racing Games",
+      "description": "Feel the speed and competition in racing games. Racing games challenge players to finish first in competitive races while maintaining control of their vehicle."
+    },
+    "sports": {
+      "title": "Sports Games",
+      "description": "Enjoy the thrill of sports in virtual form. Sports games simulate traditional physical sports such as soccer, basketball, and more."
+    },
+    "strategy": {
+      "title": "Strategy Games",
+      "description": "Plan, think, and outsmart your opponents. Strategy games focus on skillful thinking and planning to achieve victory."
+    }
+  }
+} 

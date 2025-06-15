@@ -1,0 +1,50 @@
+{
+  "games": {
+    "minecraft": {
+      "description": "Minecraft es un juego de mundo abierto desarrollado por Mojang Studios. Los jugadores interactúan con un entorno tridimensional completamente modificable hecho de bloques y entidades. Su diversa jugabilidad te permite crear, explorar, recolectar recursos, fabricar objetos y combatir.",
+      "howToPlay": "Comienza golpeando árboles para recolectar madera, luego fabrica herramientas y construye un refugio antes de que caiga la noche. Explora cuevas en busca de recursos, cultiva alimentos y expande tu mundo.",
+      "tips": "Lleva siempre antorchas, comida y una cama. Construye un refugio seguro para la noche y crea puntos de referencia para evitar perderte."
+    },
+    "fortnite": {
+      "description": "Fortnite es un juego Battle Royale gratuito con numerosos modos de juego para todo tipo de jugadores. Mira un concierto, construye una isla o lucha.",
+      "howToPlay": "Desciende a la isla, recolecta armas y recursos, y sé el último en pie. Construye estructuras para protegerte y usa el círculo de la tormenta como guía.",
+      "tips": "Aprende a construir rápidamente, mantén siempre pociones de escudo y posiciónate estratégicamente a medida que el círculo de la tormenta se reduce."
+    },
+    "amongus": {
+      "description": "Among Us es un juego de deducción social multijugador en línea. Los tripulantes trabajan juntos para completar tareas mientras intentan identificar a los impostores entre ellos.",
+      "howToPlay": "Completa tareas alrededor del mapa como tripulante, o sabotea y elimina jugadores como impostor sin ser descubierto.",
+      "tips": "Presta atención a los movimientos de otros jugadores, usa cámaras de seguridad y convoca reuniones de emergencia cuando encuentres algo sospechoso."
+    },
+    "roblox": {
+      "description": "Roblox es una plataforma de juegos en línea y sistema de creación de juegos que permite a los usuarios programar juegos y jugar a juegos creados por otros usuarios.",
+      "howToPlay": "Explora miles de juegos creados por otros usuarios, o usa Roblox Studio para crear tus propias experiencias.",
+      "tips": "Prueba diferentes juegos para encontrar tus favoritos, haz amigos para jugar juntos y considera aprender Roblox Studio para crear tus propios juegos."
+    }
+  },
+  "categories": {
+    "action": {
+      "title": "Juegos de Acción",
+      "description": "Experimenta emocionantes juegos de acción que desafían tus reflejos. Los juegos de acción se centran en desafiar los reflejos del jugador, la coordinación mano-ojo y el tiempo de reacción."
+    },
+    "adventure": {
+      "title": "Juegos de Aventura",
+      "description": "Embárcate en viajes y historias épicas. Los juegos de aventura se centran en la exploración, la resolución de puzzles y la narración de historias."
+    },
+    "puzzle": {
+      "title": "Juegos de Rompecabezas",
+      "description": "Ejercita tu cerebro y resuelve interesantes puzzles. Los juegos de rompecabezas se centran en desafíos lógicos y conceptuales, a menudo con niveles de dificultad creciente."
+    },
+    "racing": {
+      "title": "Juegos de Carreras",
+      "description": "Siente la velocidad y la competición en los juegos de carreras. Los juegos de carreras desafían a los jugadores a terminar primero en carreras competitivas mientras mantienen el control de su vehículo."
+    },
+    "sports": {
+      "title": "Juegos de Deportes",
+      "description": "Disfruta de la emoción de los deportes en forma virtual. Los juegos de deportes simulan deportes físicos tradicionales como fútbol, baloncesto y más."
+    },
+    "strategy": {
+      "title": "Juegos de Estrategia",
+      "description": "Planifica, piensa y supera a tus oponentes. Los juegos de estrategia se centran en el pensamiento hábil y la planificación para lograr la victoria."
+    }
+  }
+} 

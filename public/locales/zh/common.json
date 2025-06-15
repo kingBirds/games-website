@@ -1,0 +1,104 @@
+{
+  "site": {
+    "title": "游戏乐园",
+    "description": "发现和玩最好玩的在线游戏"
+  },
+  "nav": {
+    "home": "首页",
+    "games": "游戏",
+    "categories": "分类",
+    "search": "搜索游戏...",
+    "language": "语言"
+  },
+  "hero": {
+    "title": "发现最好玩的游戏",
+    "subtitle": "数千款免费游戏，无需下载，即点即玩",
+    "cta": "开始游戏"
+  },
+  "features": {
+    "title": "为什么选择我们",
+    "free": {
+      "title": "完全免费",
+      "description": "所有游戏都是免费的，无需付费"
+    },
+    "noDownload": {
+      "title": "无需下载",
+      "description": "直接在浏览器中玩游戏，无需安装"
+    },
+    "multiDevice": {
+      "title": "多设备支持",
+      "description": "在电脑、平板或手机上随时随地玩游戏"
+    }
+  },
+  "categories": {
+    "title": "游戏分类",
+    "viewAll": "查看全部",
+    "action": "动作",
+    "adventure": "冒险",
+    "puzzle": "益智",
+    "racing": "赛车",
+    "sports": "体育",
+    "strategy": "策略"
+  },
+  "popular": {
+    "title": "热门游戏",
+    "viewAll": "查看全部"
+  },
+  "howItWorks": {
+    "title": "如何开始",
+    "step1": {
+      "title": "选择游戏",
+      "description": "浏览我们的游戏库，找到你喜欢的游戏"
+    },
+    "step2": {
+      "title": "点击开始",
+      "description": "点击游戏卡片，进入游戏详情页"
+    },
+    "step3": {
+      "title": "开始游戏",
+      "description": "点击\"开始游戏\"按钮，立即享受游戏乐趣"
+    }
+  },
+  "testimonials": {
+    "title": "用户评价"
+  },
+  "faq": {
+    "title": "常见问题",
+    "questions": {
+      "q1": {
+        "question": "所有游戏都是免费的吗？",
+        "answer": "是的，我们网站上的所有游戏都是完全免费的，无需付费。"
+      },
+      "q2": {
+        "question": "我需要下载或安装什么吗？",
+        "answer": "不需要，所有游戏都可以直接在浏览器中玩，无需下载或安装。"
+      },
+      "q3": {
+        "question": "游戏支持手机或平板吗？",
+        "answer": "是的，我们的大多数游戏都支持手机和平板等移动设备。"
+      },
+      "q4": {
+        "question": "如何报告游戏问题？",
+        "answer": "如果您遇到任何问题，请通过页面底部的联系方式告诉我们。"
+      }
+    }
+  },
+  "footer": {
+    "about": "关于我们",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "copyright": "© 2025 游戏乐园. 保留所有权利."
+  },
+  "english": "English",
+  "chinese": "中文",
+  "featured_games": "精选游戏",
+  "new_games": "最新游戏",
+  "popular_games": "热门游戏",
+  "about_us": "关于我们",
+  "contact_us": "联系我们",
+  "privacy_policy": "隐私政策",
+  "terms_of_use": "使用条款",
+  "cookie_policy": "Cookie政策",
+  "all_rights_reserved": "保留所有权利"
+} 

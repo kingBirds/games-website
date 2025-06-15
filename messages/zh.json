@@ -1,0 +1,61 @@
+{
+  "GameCard": {
+    "new": "新游戏",
+    "featured": "精选",
+    "defaultTitle": "游戏标题",
+    "playCount": "{count}次游玩",
+    "noDescription": "暂无描述。",
+    "playGame": "开始游戏"
+  },
+  "Navigation": {
+    "home": "首页",
+    "games": "游戏",
+    "categories": "分类",
+    "about": "关于",
+    "search": "搜索游戏..."
+  },
+  "HomePage": {
+    "title": "欢迎来到游戏中心",
+    "subtitle": "发现并体验最佳在线游戏",
+    "featuredGames": "精选游戏",
+    "newGames": "新游戏",
+    "popularGames": "热门游戏",
+    "viewAll": "查看全部"
+  },
+  "GamePage": {
+    "play": "立即游玩",
+    "share": "分享",
+    "addToFavorites": "添加到收藏",
+    "relatedGames": "相关游戏",
+    "comments": "评论",
+    "leaveComment": "发表评论"
+  },
+  "Categories": {
+    "action": "动作",
+    "adventure": "冒险",
+    "puzzle": "益智",
+    "strategy": "策略",
+    "sports": "体育",
+    "racing": "竞速",
+    "rpg": "角色扮演",
+    "shooter": "射击"
+  },
+  "Footer": {
+    "siteTitle": "游戏乐园",
+    "siteDescription": "发现和玩最好玩的在线游戏，无需下载，即点即玩。",
+    "quickLinks": "快速链接",
+    "gameCategories": "游戏分类",
+    "aboutUs": "关于我们",
+    "contactUs": "联系我们",
+    "privacyPolicy": "隐私政策",
+    "termsOfUse": "使用条款",
+    "cookiePolicy": "Cookie政策",
+    "allRightsReserved": "保留所有权利",
+    "language": "语言",
+    "actionGames": "动作游戏",
+    "adventureGames": "冒险游戏",
+    "puzzleGames": "益智游戏",
+    "racingGames": "赛车游戏",
+    "sportsGames": "体育游戏"
+  }
+} 

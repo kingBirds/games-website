@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // 移除旧的 i18n 配置，它在 App Router 中不支持
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
