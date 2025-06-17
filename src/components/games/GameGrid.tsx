@@ -27,7 +27,7 @@ export const GameGrid = ({
   };
 
   return (
-    <div className="py-8">
+    <div className="py-2">
       {/* 标题和查看全部链接 */}
       {(title || viewAllLink) && (
         <div className="flex justify-between items-center mb-6">

@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://freecasualgame.com/sitemap.xml
+
+# Block admin pages
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all game pages
+Allow: /en/
+Allow: /zh/
+Allow: /es/
+Allow: /en/games/
+Allow: /zh/games/
+Allow: /es/games/
+Allow: /en/categories/
+Allow: /zh/categories/
+Allow: /es/categories/
+Allow: /en/popularity/
+Allow: /zh/popularity/
+Allow: /es/popularity/
+
+# Crawl delay
+Crawl-delay: 1 

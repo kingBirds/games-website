@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { locales } from '@/i18n';
 import { getTranslations } from '@/utils/loadTranslations';
 
+
 export const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
@@ -67,28 +68,23 @@ export const Header = () => {
     <header className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href={`/${locale}`} className="text-2xl font-bold">
-          {t.site.title}
+        <Link href={`/${locale}`} className="text-2xl font-bold ml-48">
+          <span>FreeCasualGame</span>
         </Link>
 
         {/* 桌面导航 */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link href={`/${locale}`} className="hover:text-blue-400 transition">
+        <nav className="hidden md:flex items-center flex-1 justify-between">
+          {/* 左侧：Home链接 */}
+          <Link href={`/${locale}`} className="hover:text-blue-400 transition ml-10">
             {t.nav.home}
           </Link>
-          <Link href={`/${locale}/games`} className="hover:text-blue-400 transition">
-            {t.nav.games}
-          </Link>
-          <Link href={`/${locale}/categories`} className="hover:text-blue-400 transition">
-            {t.nav.categories}
-          </Link>
           
-          {/* 搜索框 */}
-          <div className="relative">
+          {/* 中间：响应式搜索框 */}
+          <div className="relative flex-1 max-w-md mx-8">
             <input
               type="text"
               placeholder={t.nav.search}
-              className="bg-gray-800 text-white px-4 py-2 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="bg-gray-800 text-white px-4 py-2 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             />
             <button className="absolute right-3 top-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -97,7 +93,7 @@ export const Header = () => {
             </button>
           </div>
           
-          {/* 语言切换 */}
+          {/* 右侧：语言切换 */}
           <div className="relative group">
             <button className="flex items-center hover:text-blue-400 transition">
               <span>{getLanguageName(locale)}</span>
@@ -119,15 +115,28 @@ export const Header = () => {
           </div>
         </nav>
         
-        {/* 移动端菜单按钮 */}
-        <button 
-          className="md:hidden text-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+        {/* 移动端搜索和菜单 */}
+        <div className="md:hidden flex items-center space-x-3">
+          {/* 移动端搜索按钮 */}
+          <button 
+            className="text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+          
+          {/* 移动端菜单按钮 */}
+          <button 
+            className="text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
       
       {/* 移动端导航菜单 */}
@@ -136,12 +145,6 @@ export const Header = () => {
           <div className="flex flex-col space-y-3">
             <Link href={`/${locale}`} className="hover:text-blue-400 transition py-2">
               {t.nav.home}
-            </Link>
-            <Link href={`/${locale}/games`} className="hover:text-blue-400 transition py-2">
-              {t.nav.games}
-            </Link>
-            <Link href={`/${locale}/categories`} className="hover:text-blue-400 transition py-2">
-              {t.nav.categories}
             </Link>
             
             {/* 移动端搜索框 */}

@@ -1,42 +1,41 @@
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import { 
-  fetchGamesByCategory,
-  GameMonetizeGame 
+  fetchGamesByPopularity, 
+  POPULARITY_OPTIONS, 
+  POPULARITY_LABELS,
+  PopularityType 
 } from '@/lib/gamemonetize';
 import { GameSection } from '@/components/games/GameSection';
 import { SidebarLayout } from '@/components/layout/SidebarLayout';
-import { GAME_CATEGORIES, getCategoryName } from '@/lib/game-categories';
 
-interface CategoryPageProps {
+interface PopularityPageProps {
   params: Promise<{
     locale: string;
-    slug: string;
+    type: string;
   }>;
   searchParams: Promise<{
     page?: string;
   }>;
 }
 
-export default async function CategoryPage({
+export default async function PopularityPage({
   params,
   searchParams
-}: CategoryPageProps) {
-  const { locale, slug } = await params;
+}: PopularityPageProps) {
+  const { locale, type } = await params;
   const { page = '1' } = await searchParams;
   
-  // 验证语言和分类
+  // 验证语言和类型
   if (!locales.includes(locale)) notFound();
+  if (!Object.keys(POPULARITY_OPTIONS).includes(type)) notFound();
   
-  // 查找分类
-  const category = GAME_CATEGORIES.find(cat => cat.slug === slug);
-  if (!category) notFound();
-  
+  const popularityType = type as PopularityType;
   const currentPage = parseInt(page);
   const gamesPerPage = 20;
   
-  // 获取游戏数据 - 使用英文分类名称调用API
-  const games = await fetchGamesByCategory(category.name.en, gamesPerPage * currentPage);
+  // 获取游戏数据
+  const games = await fetchGamesByPopularity(popularityType, gamesPerPage * currentPage);
   
   // 分页处理
   const startIndex = (currentPage - 1) * gamesPerPage;
@@ -45,7 +44,7 @@ export default async function CategoryPage({
   const hasMore = games.length > endIndex;
   
   // 获取标题
-  const title = getCategoryName(category.id, locale);
+  const title = POPULARITY_LABELS[popularityType][locale as keyof typeof POPULARITY_LABELS[PopularityType]];
   
   return (
     <SidebarLayout locale={locale}>
@@ -56,10 +55,10 @@ export default async function CategoryPage({
             <h1 className="text-3xl font-bold">{title}</h1>
             <p className="text-gray-600">
               {locale === 'zh' 
-                ? `探索精彩的${title}游戏` 
+                ? `发现最好的${title?.replace('游戏', '') || ''}游戏` 
                 : locale === 'es'
-                ? `Explora increíbles juegos de ${title?.toLowerCase() || ''}`
-                : `Explore amazing ${title?.toLowerCase() || ''} games`
+                ? `Descubre los mejores ${title?.toLowerCase() || 'juegos'}`
+                : `Discover the best ${title?.toLowerCase() || 'games'}`
               }
             </p>
           </div>
@@ -77,7 +76,7 @@ export default async function CategoryPage({
         <div className="flex justify-center items-center mt-12 space-x-4">
           {currentPage > 1 && (
             <a
-              href={`/${locale}/categories/${slug}?page=${currentPage - 1}`}
+              href={`/${locale}/popularity/${type}?page=${currentPage - 1}`}
               className="px-6 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
             >
               {locale === 'zh' ? '上一页' : locale === 'es' ? 'Anterior' : 'Previous'}
@@ -90,7 +89,7 @@ export default async function CategoryPage({
           
           {hasMore && (
             <a
-              href={`/${locale}/categories/${slug}?page=${currentPage + 1}`}
+              href={`/${locale}/popularity/${type}?page=${currentPage + 1}`}
               className="px-6 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
             >
               {locale === 'zh' ? '下一页' : locale === 'es' ? 'Siguiente' : 'Next'}
@@ -117,10 +116,10 @@ export async function generateStaticParams() {
   const params = [];
   
   for (const locale of locales) {
-    for (const category of GAME_CATEGORIES) {
+    for (const type of Object.keys(POPULARITY_OPTIONS)) {
       params.push({
         locale,
-        slug: category.slug
+        type
       });
     }
   }
@@ -132,25 +131,25 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ locale: string; slug: string }>;
+  params: Promise<{ locale: string; type: string }>;
 }) {
-  const { locale, slug } = await params;
+  const { locale, type } = await params;
   
-  const category = GAME_CATEGORIES.find(cat => cat.slug === slug);
-  if (!category) {
+  if (!Object.keys(POPULARITY_OPTIONS).includes(type)) {
     return {
       title: 'Page Not Found'
     };
   }
   
-  const title = getCategoryName(category.id, locale);
+  const popularityType = type as PopularityType;
+  const title = POPULARITY_LABELS[popularityType][locale as keyof typeof POPULARITY_LABELS[PopularityType]];
   
   return {
     title: `${title} - ${locale === 'zh' ? '游戏网站' : locale === 'es' ? 'Sitio de Juegos' : 'Game Website'}`,
     description: locale === 'zh' 
-      ? `探索精彩的${title}游戏，免费在线游戏` 
+      ? `发现最好的${title}，免费在线游戏` 
       : locale === 'es'
-      ? `Explora increíbles juegos de ${title?.toLowerCase() || ''}, juegos gratuitos en línea`
-      : `Explore amazing ${title?.toLowerCase() || ''} games, free online games`
+      ? `Descubre los mejores ${title?.toLowerCase() || 'juegos'}, juegos gratuitos en línea`
+      : `Discover the best ${title?.toLowerCase() || 'games'}, free online games`
   };
 } 

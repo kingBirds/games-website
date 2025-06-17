@@ -1,12 +1,17 @@
-import { Hero } from '@/components/sections/Hero';
 import { Features } from '@/components/sections/Features';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { FAQ } from '@/components/sections/FAQ';
-import { GameGrid } from '@/components/games/GameGrid';
-import { sampleGames } from '@/lib/sample-data';
+import { GameSection } from '@/components/games/GameSection';
+import { SidebarLayout } from '@/components/layout/SidebarLayout';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
+import { 
+  fetchAllPopularityGames, 
+  POPULARITY_LABELS,
+  PopularityType 
+} from '@/lib/gamemonetize';
+import { Metadata } from 'next';
 
 export default async function Home({
   params,
@@ -19,51 +24,93 @@ export default async function Home({
   // 验证请求的语言是否受支持
   if (!locales.includes(locale)) notFound();
 
-  // 获取示例游戏数据
-  const featuredGames = sampleGames.filter((game: any) => game.isFeatured).slice(0, 6);
-  const newGames = sampleGames.filter((game: any) => game.isNew).slice(0, 8);
-  const popularGames = sampleGames.sort((a: any, b: any) => b.playCount - a.playCount).slice(0, 8);
+  // 获取所有分类的游戏数据 (每个分类3个游戏)
+  const allGames = await fetchAllPopularityGames(3);
 
   return (
-    <main>
-      <Hero />
-      
-      {/* 精选游戏 */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            {locale === 'zh' ? "精选游戏" : "Featured Games"}
-          </h2>
-          <GameGrid games={featuredGames} locale={locale} />
-        </div>
-      </section>
-      
-      <Features />
-      
-      {/* 最新游戏 */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            {locale === 'zh' ? "最新游戏" : "New Games"}
-          </h2>
-          <GameGrid games={newGames} locale={locale} />
-        </div>
-      </section>
-      
-      <HowItWorks />
-      
-      {/* 热门游戏 */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            {locale === 'zh' ? "热门游戏" : "Popular Games"}
-          </h2>
-          <GameGrid games={popularGames} locale={locale} />
-        </div>
-      </section>
-      
-      <Testimonials />
-      <FAQ />
-    </main>
+    <SidebarLayout locale={locale}>
+      <div>
+        {/* 动态显示所有分类的游戏 */}
+        {Object.entries(allGames).map(([popularityKey, games], index) => {
+          const popularity = popularityKey as PopularityType;
+          const title = POPULARITY_LABELS[popularity][locale as keyof typeof POPULARITY_LABELS[PopularityType]];
+          const moreLink = `/${locale}/popularity/${popularity}`;
+          
+          // 交替背景色
+          const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
+          
+          return (
+            <GameSection
+              key={popularity}
+              title={title}
+              games={games}
+              locale={locale}
+              moreLink={moreLink}
+              className={bgClass}
+            />
+          );
+        })}
+        
+        <Features />
+        <HowItWorks />
+        <Testimonials />
+        <FAQ />
+      </div>
+    </SidebarLayout>
   );
+}
+
+// 生成页面元数据
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const titles = {
+    zh: "免费休闲游戏 - FreeCasualGame.com 在线游戏",
+    en: "Free Casual Games - Play Online Games at FreeCasualGame.com",
+    es: "Juegos Casuales Gratis - Jugar Juegos en Línea en FreeCasualGame.com"
+  };
+  
+  const descriptions = {
+    zh: "发现并畅玩最好的免费休闲游戏。无需下载，即点即玩。包含动作、益智、冒险游戏等更多类型。",
+    en: "Discover and play the best free casual games online. No downloads required, instant play. Find action, puzzle, adventure games and more.",
+    es: "Descubre y juega los mejores juegos casuales gratuitos en línea. No se requieren descargas, juego instantáneo. Encuentra juegos de acción, rompecabezas, aventura y más."
+  };
+  
+  const title = titles[locale as keyof typeof titles] || titles.en;
+  const description = descriptions[locale as keyof typeof descriptions] || descriptions.en;
+  
+  return {
+    title,
+    description,
+    keywords: locale === 'zh' 
+      ? "免费游戏, 休闲游戏, 在线游戏, 浏览器游戏, 即时游戏, 无需下载游戏"
+      : locale === 'es'
+      ? "juegos gratis, juegos casuales, juegos en línea, juegos de navegador, juegos instantáneos, juegos sin descarga"
+      : "free games, casual games, online games, browser games, instant games, no download games",
+    openGraph: {
+      title,
+      description,
+      url: `https://freecasualgame.com/${locale}`,
+      siteName: 'FreeCasualGame.com',
+      type: 'website',
+      locale: locale === 'zh' ? 'zh_CN' : locale === 'es' ? 'es_ES' : 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `https://freecasualgame.com/${locale}`,
+      languages: {
+        'en': 'https://freecasualgame.com/en',
+        'zh': 'https://freecasualgame.com/zh',
+        'es': 'https://freecasualgame.com/es',
+      },
+    },
+  };
 } 

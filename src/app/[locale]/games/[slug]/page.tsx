@@ -1,49 +1,51 @@
 'use client';
 
-import { sampleGames } from '@/lib/sample-data';
+import { fetchGameById, GameMonetizeGame } from '@/lib/gamemonetize';
 import { locales } from '@/i18n';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { GameGrid } from '@/components/games/GameGrid';
-import { GameEmbed } from '@/components/games/GameEmbed';
+import { GameMonetizeEmbed } from '@/components/games/GameMonetizeEmbed';
 import { useParams } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 
 export default function GameDetailPage() {
   const params = useParams();
   const locale = params.locale as string;
-  const slug = params.slug as string; // 这里的slug实际上是游戏的id
+  const slug = params.slug as string; // 这里的slug就是游戏的id
   
-  const [game, setGame] = useState<any>(null);
-  const [relatedGames, setRelatedGames] = useState<any[]>([]);
+  const [game, setGame] = useState<GameMonetizeGame | null>(null);
   const [loading, setLoading] = useState(true);
   const [showGameEmbed, setShowGameEmbed] = useState(false);
   const gameEmbedRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // 验证请求的语言是否受支持
-    if (!locales.includes(locale)) {
-      notFound();
-    }
+    const loadGame = async () => {
+      // 验证请求的语言是否受支持
+      if (!locales.includes(locale)) {
+        notFound();
+      }
 
-    // 查找对应的游戏 - 使用id而不是slug
-    const foundGame = sampleGames.find((g: any) => g.id === slug);
-    
-    // 如果找不到游戏，返回404
-    if (!foundGame) {
-      notFound();
-    }
-    
-    setGame(foundGame);
-    
-    // 获取相关游戏（同类别的其他游戏）
-    const related = sampleGames
-      .filter((g: any) => g.id !== foundGame.id && g.categories.some((c: string) => foundGame.categories.includes(c)))
-      .slice(0, 4);
-    
-    setRelatedGames(related);
-    setLoading(false);
+      try {
+        console.log('正在获取游戏详情，ID:', slug);
+        // 直接从API获取游戏详情
+        const gameData = await fetchGameById(slug);
+        
+        if (!gameData) {
+          console.log('未找到游戏:', slug);
+          notFound();
+          return;
+        }
+        
+        console.log('成功获取游戏数据:', gameData);
+        setGame(gameData);
+      } catch (error) {
+        console.error('获取游戏详情失败:', error);
+        notFound();
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadGame();
   }, [locale, slug]);
   
   // 处理开始游戏按钮点击
@@ -57,7 +59,7 @@ export default function GameDetailPage() {
     }, 100);
   };
   
-  if (loading || !game) {
+  if (loading) {
     return (
       <div className="container mx-auto px-4 py-12">
         <div className="animate-pulse">
@@ -75,133 +77,141 @@ export default function GameDetailPage() {
     );
   }
 
+  if (!game) {
+    notFound();
+    return null;
+  }
+
   return (
     <div className="container mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* 游戏信息 */}
-        <div className="lg:col-span-2">
-          <h1 className="text-4xl font-bold mb-4">
-            {locale === 'zh' ? game.title.zh : game.title.en}
-          </h1>
-          
-          <div className="flex flex-wrap gap-2 mb-4">
-            {game.categories.map((category: string) => (
-              <span key={category} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-                {category}
-              </span>
-            ))}
-          </div>
-          
-          <div className="relative aspect-video w-full mb-6 overflow-hidden rounded-lg">
-            <Image 
-              src={game.thumbnail} 
-              alt={locale === 'zh' ? game.title.zh : game.title.en}
-              fill
-              className="object-cover"
-            />
-          </div>
-          
-          <div className="flex gap-4 mb-8">
-            <button 
-              className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center"
-              onClick={handlePlayGame}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-              </svg>
-              {locale === 'zh' ? "开始游戏" : "Play Now"}
-            </button>
-            
-            <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
-              </svg>
-              {locale === 'zh' ? "分享" : "Share"}
-            </button>
-            
-            <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              {locale === 'zh' ? "收藏" : "Favorite"}
-            </button>
-          </div>
-          
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">{locale === 'zh' ? "游戏描述" : "Description"}</h2>
-            <p className="text-gray-700">
-              {locale === 'zh' ? game.description.zh : game.description.en}
-            </p>
-          </div>
-          
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">{locale === 'zh' ? "游戏说明" : "Instructions"}</h2>
-            <p className="text-gray-700">
-              {locale === 'zh' ? game.instructions?.zh || "暂无游戏说明" : game.instructions?.en || "No instructions available"}
-            </p>
-          </div>
+      {/* 游戏标题和分类 */}
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold mb-4">
+          {game.title}
+        </h1>
+        
+        <div className="flex flex-wrap gap-2 mb-4">
+          {game.category.map((category: string) => (
+            <span key={category} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm capitalize">
+              {category}
+            </span>
+          ))}
         </div>
         
-        {/* 游戏嵌入和信息 */}
-        <div>
-          <div className="bg-gray-100 p-6 rounded-lg mb-6">
-            <h3 className="text-xl font-bold mb-4">{locale === 'zh' ? "游戏信息" : "Game Info"}</h3>
+        <div className="flex gap-4 mb-6">
+          <button 
+            className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center"
+            onClick={handlePlayGame}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+            </svg>
+            {locale === 'zh' ? "开始游戏" : "Play Now"}
+          </button>
+          
+          <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+            </svg>
+            {locale === 'zh' ? "分享" : "Share"}
+          </button>
+          
+          <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            {locale === 'zh' ? "收藏" : "Favorite"}
+          </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        {/* 游戏嵌入区域 - 占据更大空间 */}
+        <div className="lg:col-span-3">
+          {showGameEmbed ? (
+            <div ref={gameEmbedRef} className="mb-8">
+              <GameMonetizeEmbed
+                gameUrl={game.gameUrl}
+                title={game.title}
+                locale={locale}
+                aspectRatio="16/9"
+              />
+            </div>
+          ) : (
+            <div className="mb-8">
+              <img
+                src={game.thumbnail}
+                alt={game.title}
+                className="w-full h-64 lg:h-96 object-cover rounded-lg shadow-lg"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/images/placeholder-game.jpg';
+                }}
+              />
+            </div>
+          )}
+          
+          {/* 游戏描述 */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-4">
+              {locale === 'zh' ? "游戏描述" : "Game Description"}
+            </h2>
+            <div className="bg-white rounded-lg shadow p-6">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {game.description}
+              </p>
+              
+              {game.instructions && (
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">
+                    {locale === 'zh' ? "游戏说明" : "Instructions"}
+                  </h3>
+                  <p className="text-gray-600">
+                    {game.instructions}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* 游戏信息侧边栏 */}
+        <div className="lg:col-span-1">
+          <div className="bg-white rounded-lg shadow p-6 mb-6">
+            <h3 className="text-lg font-bold mb-4">
+              {locale === 'zh' ? "游戏信息" : "Game Info"}
+            </h3>
             
             <div className="space-y-3">
-              <div className="flex justify-between">
-                <span className="text-gray-600">{locale === 'zh' ? "开发者" : "Developer"}</span>
-                <span>{game.developer || 'Unknown'}</span>
+              <div>
+                <span className="text-sm text-gray-500">
+                  {locale === 'zh' ? "开发商" : "Developer"}
+                </span>
+                <p className="font-medium">GameMonetize</p>
               </div>
               
-              <div className="flex justify-between">
-                <span className="text-gray-600">{locale === 'zh' ? "发布日期" : "Release Date"}</span>
-                <span>{game.publishDate || 'Unknown'}</span>
+              <div>
+                <span className="text-sm text-gray-500">
+                  {locale === 'zh' ? "游戏尺寸" : "Game Size"}
+                </span>
+                <p className="font-medium">{game.width} x {game.height}</p>
               </div>
               
-              <div className="flex justify-between">
-                <span className="text-gray-600">{locale === 'zh' ? "游玩次数" : "Play Count"}</span>
-                <span>{game.playCount.toLocaleString()}</span>
-              </div>
-              
-              <div className="flex justify-between">
-                <span className="text-gray-600">{locale === 'zh' ? "适龄提示" : "Age Rating"}</span>
-                <span>{game.minAge}+</span>
+              <div>
+                <span className="text-sm text-gray-500">
+                  {locale === 'zh' ? "标签" : "Tags"}
+                </span>
+                <div className="flex flex-wrap gap-1 mt-1">
+                  {game.tags.map((tag: string) => (
+                    <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs capitalize">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-          
-          {/* 游戏嵌入 */}
-          <div ref={gameEmbedRef} className="bg-gray-100 p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-4">{locale === 'zh' ? "试玩游戏" : "Play Game"}</h3>
-            {showGameEmbed ? (
-              <GameEmbed 
-                gameUrl={game.gameUrl}
-                title={locale === 'zh' ? game.title.zh : game.title.en}
-                locale={locale}
-                aspectRatio="16/9"
-                fullscreenEnabled={true}
-              />
-            ) : (
-              <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                <button 
-                  onClick={handlePlayGame}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                  </svg>
-                  {locale === 'zh' ? "点击加载游戏" : "Click to Load Game"}
-                </button>
-              </div>
-            )}
-          </div>
         </div>
-      </div>
-      
-      {/* 相关游戏 */}
-      <div className="mt-12">
-        <h2 className="text-2xl font-bold mb-6">{locale === 'zh' ? "相关游戏" : "Related Games"}</h2>
-        <GameGrid games={relatedGames} locale={locale} />
       </div>
     </div>
   );

@@ -72,10 +72,20 @@ export const GameCard = ({ game, locale }: GameCardProps) => {
           ))}
         </div>
         
-        {/* 游戏描述 - 移动端隐藏 */}
-        <p className="text-gray-400 text-sm mb-4 line-clamp-2 hidden md:block">
-          {game.description[locale] || game.description['en'] || (locale === 'zh' ? '暂无描述。' : 'No description available.')}
-        </p>
+        {/* 游戏描述 */}
+        <div className="text-gray-400 text-sm mb-4 relative">
+          <div className="line-clamp-2 overflow-hidden">
+            {game.description[locale] || game.description['en'] || (locale === 'zh' ? '暂无描述。' : 'No description available.')}
+          </div>
+          <div className="text-right mt-1">
+            <Link
+              href={`/${locale}/games/${game.id}`}
+              className="text-blue-500 hover:text-blue-600 text-xs"
+            >
+              {locale === 'zh' ? '查看更多' : 'Read More'}
+            </Link>
+          </div>
+        </div>
         
         {/* 开始游戏按钮 */}
         <Link

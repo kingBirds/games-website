@@ -211,6 +211,58 @@ export const sampleGames: Game[] = [
     },
     minAge: 6,
   },
+  {
+    id: 'kjjfnkvvc17kylsnhoa23q248ihugrro', // GameMonetize游戏ID - Girls Pajama Party
+    title: {
+      zh: '女孩睡衣派对',
+      en: 'Girls Pajama Party',
+    },
+    description: {
+      zh: '嘿女孩们！准备好举办史上最棒的睡衣派对吧！这是一个超级有趣的休闲模拟游戏，同时也很有教育意义！',
+      en: 'Hey girls! Get ready to host the most amazing pajama party ever with Girls Pajama Party, a super fun casual simulation game thats also educational!',
+    },
+    thumbnail: 'https://img.gamemonetize.com/kjjfnkvvc17kylsnhoa23q248ihugrro/512x384.jpg',
+    gameUrl: 'https://html5.gamemonetize.com/kjjfnkvvc17kylsnhoa23q248ihugrro/',
+    categories: ['hypercasual'],
+    tags: ['amazing', 'educational', 'fun'],
+    rating: 4.8,
+    playCount: 5280,
+    isNew: true,
+    isFeatured: true,
+    developer: 'GameMonetize',
+    publishDate: '2023-10-15',
+    instructions: {
+      zh: '鼠标点击或触摸屏幕来游玩',
+      en: 'Mouse click or tap to play',
+    },
+    minAge: 8,
+  },
+  {
+    id: 'cqtzwbhonl1obzxshoppcaq0mek8g2qj', // Harvester Cut Grass
+    title: {
+      zh: '收割机割草',
+      en: 'Harvester Cut Grass',
+    },
+    description: {
+      zh: '嘿农夫，是时候驾驶你的收割机了！坐到驾驶座上收集所有的小麦。收获季节到了。',
+      en: 'Hey farmer, it\'s time to drive your harvester! Get behind the wheel and collect all the wheat. Harvest season has arrived.',
+    },
+    thumbnail: 'https://img.gamemonetize.com/cqtzwbhonl1obzxshoppcaq0mek8g2qj/512x384.jpg',
+    gameUrl: 'https://html5.gamemonetize.com/cqtzwbhonl1obzxshoppcaq0mek8g2qj/',
+    categories: ['hypercasual'],
+    tags: ['1 player', '2d', 'farm', 'games', 'html5', 'tractor'],
+    rating: 4.6,
+    playCount: 8420,
+    isNew: true,
+    isFeatured: false,
+    developer: 'GameMonetize',
+    publishDate: '2023-10-14',
+    instructions: {
+      zh: '使用方向键移动，支持手机和PC，移动端有触摸控制',
+      en: 'Use the Arrow keys to move left right up and down. Playable on both mobile and PC. Mobile touch controls available',
+    },
+    minAge: 6,
+  },
 ];
 
 // 示例分类数据

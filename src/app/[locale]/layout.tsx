@@ -12,8 +12,46 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Games Portal",
-  description: "Discover and play the best online games",
+  title: "Free Casual Games - Play Online Games at FreeCasualGame.com",
+  description: "Discover and play the best free casual games online. No downloads required, instant play. Find action, puzzle, adventure games and more.",
+  keywords: "free games, casual games, online games, browser games, instant games, no download games",
+  authors: [{ name: "FreeCasualGame.com" }],
+  creator: "FreeCasualGame.com",
+  publisher: "FreeCasualGame.com",
+  metadataBase: new URL('https://freecasualgame.com'),
+  alternates: {
+    canonical: 'https://freecasualgame.com',
+    languages: {
+      'en': 'https://freecasualgame.com/en',
+      'zh': 'https://freecasualgame.com/zh',
+      'es': 'https://freecasualgame.com/es',
+    },
+  },
+  openGraph: {
+    title: "Free Casual Games - Play Online Games",
+    description: "Discover and play the best free casual games online. No downloads required, instant play.",
+    url: 'https://freecasualgame.com',
+    siteName: 'FreeCasualGame.com',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Free Casual Games - Play Online Games",
+    description: "Discover and play the best free casual games online. No downloads required, instant play.",
+    site: '@freecasualgame',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 // 生成静态参数，为每个支持的语言生成一个路径
@@ -40,6 +78,20 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WZQHFT845S"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WZQHFT845S');
+          `}
+        </Script>
+        
         {/* 预加载当前语言的内容翻译 */}
         <link 
           rel="preload" 
