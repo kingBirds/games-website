@@ -27,20 +27,20 @@ export const GameGrid = ({
   };
 
   return (
-    <div className="py-2">
+    <div className="py-0">
       {/* 标题和查看全部链接 */}
       {(title || viewAllLink) && (
-        <div className="flex justify-between items-center mb-6">
-          {title && <h2 className="text-2xl font-bold">{title}</h2>}
+        <div className="flex justify-between items-center mb-4 sm:mb-6">
+          {title && <h2 className="text-xl sm:text-2xl font-bold">{title}</h2>}
           {viewAllLink && (
             <a
               href={viewAllLink}
-              className="text-blue-500 hover:text-blue-600 font-medium flex items-center"
+              className="text-blue-500 hover:text-blue-600 font-medium flex items-center text-sm sm:text-base"
             >
               {viewAllText}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 ml-1"
+                className="h-4 w-4 sm:h-5 sm:w-5 ml-1"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -56,7 +56,7 @@ export const GameGrid = ({
       )}
 
       {/* 游戏网格 */}
-      <div className={`grid ${gridCols[columns]} gap-6`}>
+      <div className={`grid ${gridCols[columns]} gap-3 sm:gap-4 lg:gap-6`}>
         {games.map((game) => (
           <GameCard key={game.id} game={game} locale={locale} />
         ))}

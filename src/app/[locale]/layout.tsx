@@ -78,6 +78,9 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
+        {/* Viewport meta tag for mobile responsiveness */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+        
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-WZQHFT845S"

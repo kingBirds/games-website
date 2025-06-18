@@ -46,16 +46,16 @@ export const GameSection = ({
   }));
 
   return (
-    <section className={`py-0 ${className}`}>
-      <div className="py-1">
-        <div className="flex justify-between items-center mb-1">
-          <h2 className="text-3xl font-bold">
+    <section className={`py-6 sm:py-8 ${className}`}>
+      <div className="px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 sm:mb-6 gap-3 sm:gap-0">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
             {title}
           </h2>
           {moreLink && (
             <Link 
               href={moreLink}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center"
+              className="px-4 sm:px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center text-sm sm:text-base w-full sm:w-auto"
             >
               {locale === 'zh' ? '查看更多' : 'View More'}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">

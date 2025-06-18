@@ -14,7 +14,7 @@ export const SidebarLayout = ({ children, locale, className = "" }: SidebarLayou
 
   return (
     <div className={`min-h-screen ${className}`}>
-      {/* 侧边栏 */}
+      {/* 侧边栏 - 只在大屏幕显示 */}
       <Sidebar 
         locale={locale} 
         className="hidden lg:block" 
@@ -22,13 +22,14 @@ export const SidebarLayout = ({ children, locale, className = "" }: SidebarLayou
       />
       
       {/* 主内容区域 */}
-      <main className={`bg-gray-100 transition-all duration-300 ${
-        isSidebarCollapsed ? 'lg:ml-16 lg:pl-6' : 'lg:ml-64 lg:pl-6'
-      }`}>
-        {children}
+      <main className={`bg-gray-100 transition-all duration-300 min-h-screen
+        px-4 sm:px-6 py-4 sm:py-6
+        ${isSidebarCollapsed ? 'lg:ml-16 lg:pl-6' : 'lg:ml-64 lg:pl-6'}
+      `}>
+        <div className="max-w-7xl mx-auto">
+          {children}
+        </div>
       </main>
-      
-      {/* 移动端侧边栏 - 可以后续添加抽屉式实现 */}
     </div>
   );
 }; 
