@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update-games-data": "node scripts/update-games-data.js",
+    "test-cache": "node test-cache-api.js"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",

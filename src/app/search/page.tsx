@@ -2,13 +2,15 @@ import { sampleGames } from '@/lib/sample-data';
 import { GameGrid } from '@/components/games/GameGrid';
 import Link from 'next/link';
 
-export default function SearchPage({
+export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  // Await searchParams in Next.js 15
+  const resolvedSearchParams = await searchParams;
   // 获取搜索查询
-  const query = searchParams.q as string | undefined;
+  const query = resolvedSearchParams.q as string | undefined;
   
   // 通常这里会从用户会话或浏览器设置中获取语言
   const locale = 'zh'; // 默认中文
@@ -78,7 +80,7 @@ export default function SearchPage({
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-4">搜索结果: "{query}"</h1>
+        <h1 className="text-3xl font-bold mb-4">搜索结果: &ldquo;{query}&rdquo;</h1>
         <p className="text-gray-600">找到 {searchResults.length} 个结果</p>
         
         {/* 搜索表单 */}

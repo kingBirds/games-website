@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
 import { 
-  fetchGamesByCategory,
-  GameMonetizeGame 
+  fetchGamesByCategory
 } from '@/lib/gamemonetize';
 import { GameSection } from '@/components/games/GameSection';
 import { SidebarLayout } from '@/components/layout/SidebarLayout';

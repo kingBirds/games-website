@@ -1,20 +1,21 @@
 import { sampleGames, sampleCategories } from '@/lib/sample-data';
 import { GameGrid } from '@/components/games/GameGrid';
 import Link from 'next/link';
-import { useState } from 'react';
 
-export default function GamesPage({
+export default async function GamesPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  // Await searchParams in Next.js 15
+  const resolvedSearchParams = await searchParams;
   // 通常这里会从用户会话或浏览器设置中获取语言
   const locale = 'zh'; // 默认中文
 
   // 处理过滤条件
-  const category = searchParams.category as string | undefined;
-  const featured = searchParams.featured === 'true';
-  const isNew = searchParams.new === 'true';
+  const category = resolvedSearchParams.category as string | undefined;
+  const featured = resolvedSearchParams.featured === 'true';
+  const isNew = resolvedSearchParams.new === 'true';
 
   // 过滤游戏
   let filteredGames = [...sampleGames];

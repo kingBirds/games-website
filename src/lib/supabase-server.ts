@@ -5,7 +5,7 @@ import { cookies } from 'next/headers'
 const supabaseUrl = 'https://lysweuannqyqmwskylsu.supabase.co'
 
 export async function createClient() {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
 
   return createServerClient(
     supabaseUrl,
