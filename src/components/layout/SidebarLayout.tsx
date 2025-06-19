@@ -1,6 +1,7 @@
 "use client";
 
 import { Sidebar } from './Sidebar';
+import { MobileCategoryBar } from './MobileCategoryBar';
 import { useState } from 'react';
 
 interface SidebarLayoutProps {
@@ -14,12 +15,15 @@ export const SidebarLayout = ({ children, locale, className = "" }: SidebarLayou
 
   return (
     <div className={`min-h-screen ${className}`}>
-      {/* 侧边栏 - 只在大屏幕显示 */}
+      {/* 桌面端侧边栏 */}
       <Sidebar 
         locale={locale} 
         className="hidden lg:block" 
         onCollapseChange={setIsSidebarCollapsed}
       />
+      
+      {/* 移动端分类导航条 */}
+      <MobileCategoryBar locale={locale} />
       
       {/* 主内容区域 */}
       <main className={`bg-gray-100 transition-all duration-300 min-h-screen

@@ -5,6 +5,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { locales } from '@/i18n';
 import { getTranslations } from '@/utils/loadTranslations';
+import { GAME_CATEGORIES, getCategoryName } from '@/lib/game-categories';
 
 
 export const Header = () => {
@@ -95,64 +96,74 @@ export const Header = () => {
 
   return (
     <header className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href={`/${locale}`} className="text-xl sm:text-2xl font-bold">
-          <span className="hidden sm:inline">FreeCasualGame</span>
-          <span className="sm:hidden">FCG</span>
-        </Link>
+      {/* 桌面端Header */}
+      <div className="hidden md:block">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link href={`/${locale}`} className="text-xl sm:text-2xl font-bold">
+            <span className="hidden sm:inline">FreeCasualGame</span>
+            <span className="sm:hidden">FCG</span>
+          </Link>
 
-        {/* 桌面导航 */}
-        <nav className="hidden md:flex items-center flex-1 justify-between">
-          {/* 左侧：Home链接 */}
-          <Link href={`/${locale}`} className="hover:text-blue-400 transition ml-10">
-            {t.nav.home}
+          {/* 桌面导航 */}
+          <nav className="flex items-center flex-1 justify-between">
+            {/* 左侧：Home链接 */}
+            <Link href={`/${locale}`} className="hover:text-blue-400 transition ml-10">
+              {t.nav.home}
+            </Link>
+            
+            {/* 中间：响应式搜索框 */}
+            <form onSubmit={handleDesktopSearchSubmit} className="relative flex-1 max-w-md mx-8">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyPress={(e) => handleKeyPress(e, searchQuery)}
+                placeholder={t.nav.search}
+                className="bg-gray-800 text-white px-4 py-2 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              />
+              <button 
+                type="submit"
+                className="absolute right-3 top-2 hover:text-blue-400 transition"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0z" />
+                </svg>
+              </button>
+            </form>
+            
+            {/* 右侧：语言切换 */}
+            <div className="relative group">
+              <button className="flex items-center hover:text-blue-400 transition">
+                <span>{getLanguageName(locale)}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute right-0 mt-2 w-32 bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                {locales.map((lang) => (
+                  <button 
+                    key={lang}
+                    onClick={() => changeLanguage(lang)} 
+                    className={`block w-full text-left px-4 py-2 hover:bg-gray-700 ${locale === lang ? 'bg-gray-700' : ''}`}
+                  >
+                    {getLanguageName(lang)}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      {/* 移动端Header */}
+      <div className="md:hidden">
+        {/* 顶部：Logo和菜单按钮 */}
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <Link href={`/${locale}`} className="text-xl font-bold">
+            FreeCasualGame
           </Link>
           
-          {/* 中间：响应式搜索框 */}
-          <form onSubmit={handleDesktopSearchSubmit} className="relative flex-1 max-w-md mx-8">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyPress={(e) => handleKeyPress(e, searchQuery)}
-              placeholder={t.nav.search}
-              className="bg-gray-800 text-white px-4 py-2 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-            />
-            <button 
-              type="submit"
-              className="absolute right-3 top-2 hover:text-blue-400 transition"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0z" />
-              </svg>
-            </button>
-          </form>
-          
-          {/* 右侧：语言切换 */}
-          <div className="relative group">
-            <button className="flex items-center hover:text-blue-400 transition">
-              <span>{getLanguageName(locale)}</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className="absolute right-0 mt-2 w-32 bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-              {locales.map((lang) => (
-                <button 
-                  key={lang}
-                  onClick={() => changeLanguage(lang)} 
-                  className={`block w-full text-left px-4 py-2 hover:bg-gray-700 ${locale === lang ? 'bg-gray-700' : ''}`}
-                >
-                  {getLanguageName(lang)}
-                </button>
-              ))}
-            </div>
-          </div>
-        </nav>
-        
-        {/* 移动端菜单按钮 */}
-        <div className="md:hidden">
           <button 
             className="text-white p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -169,6 +180,28 @@ export const Header = () => {
             )}
           </button>
         </div>
+
+        {/* 中央搜索框 */}
+        <div className="container mx-auto px-4 pb-3">
+          <form onSubmit={handleMobileSearchSubmit} className="relative">
+            <input
+              type="text"
+              value={mobileSearchQuery}
+              onChange={(e) => setMobileSearchQuery(e.target.value)}
+              onKeyPress={(e) => handleKeyPress(e, mobileSearchQuery)}
+              placeholder={t.nav.search}
+              className="bg-gray-800 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
+            />
+            <button 
+              type="submit"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:text-blue-400 transition"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0z" />
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
       
       {/* 移动端导航菜单 */}
@@ -183,25 +216,33 @@ export const Header = () => {
               {t.nav.home}
             </Link>
             
-            {/* 移动端搜索框 */}
-            <form onSubmit={handleMobileSearchSubmit} className="relative">
-              <input
-                type="text"
-                value={mobileSearchQuery}
-                onChange={(e) => setMobileSearchQuery(e.target.value)}
-                onKeyPress={(e) => handleKeyPress(e, mobileSearchQuery)}
-                placeholder={t.nav.search}
-                className="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-              />
-              <button 
-                type="submit"
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:text-blue-400 transition"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0z" />
-                </svg>
-              </button>
-            </form>
+            {/* 移动端游戏分类 */}
+            <div className="border-t border-gray-700 pt-4">
+              <p className="text-gray-400 mb-3 font-medium">
+                {locale === 'zh' ? '游戏分类' : locale === 'es' ? 'Categorías' : 'Categories'}
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {GAME_CATEGORIES.slice(0, 8).map((category) => (
+                  <Link 
+                    key={category.id}
+                    href={`/${locale}/categories/${category.slug}`}
+                    className="text-center py-2 px-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-sm"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {getCategoryName(category.id, locale)}
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-3 text-center">
+                <Link 
+                  href={`/${locale}/categories`}
+                  className="text-blue-400 hover:text-blue-300 text-sm"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {locale === 'zh' ? '查看全部分类 →' : locale === 'es' ? 'Ver todas las categorías →' : 'View all categories →'}
+                </Link>
+              </div>
+            </div>
             
             {/* 移动端语言切换 */}
             <div className="border-t border-gray-700 pt-4">
