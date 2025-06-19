@@ -1,8 +1,216 @@
 {
-  "timestamp": "2025-06-18T11:55:52.176Z",
-  "lastUpdated": "2025-06-18T11:55:52.179Z",
+  "timestamp": "2025-06-19T12:53:57.556Z",
+  "lastUpdated": "2025-06-19T12:53:57.557Z",
   "categories": {
     "All": [
+      {
+        "id": "34208",
+        "title": "Sprunki Ketchup Mod",
+        "description": "Sprunki Ketchup Mod - A game with physics of throws and ragdoll elements. Throw ketchup so as to get into the Sprunki and turn it into a ketchup version! Try your hand at 30 levels! The difficulty will increase, and the maps will increase. Think with your head: calculate the perfect trajectory of the throw and use the bounces to win!",
+        "thumbnail": "https://img.gamemonetize.com/7tvjo8x6w1flu3fvadry5mz8qbhotkxo/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/7tvjo8x6w1flu3fvadry5mz8qbhotkxo/",
+        "category": [
+          "puzzles"
+        ],
+        "tags": [
+          "1 player",
+          "2d",
+          "angrybirds",
+          "casual",
+          "mobile",
+          "physics",
+          "sprunki"
+        ],
+        "instructions": "Your mission throw ketchup at Simon Use the ketchup as a projectile stretch it like a slingshot and throw it accurately ",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34207",
+        "title": "BlockPuzzleMagic",
+        "description": "Assemble and eliminate the blocks. Various shaped blocks will randomly appear at the bottom. Drag the blocks into the upper box. They will be eliminated when a row or column is filled. Come and give it a try.",
+        "thumbnail": "https://img.gamemonetize.com/z6gxwxdgunqmjmhva7j5kszeya71ls9u/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/z6gxwxdgunqmjmhva7j5kszeya71ls9u/",
+        "category": [
+          "puzzles"
+        ],
+        "tags": [
+          "1 player",
+          "arcade",
+          "puzzle",
+          "puzzleblock"
+        ],
+        "instructions": "Mouse click or tap to play",
+        "width": 350,
+        "height": 600
+      },
+      {
+        "id": "34206",
+        "title": "Truck Driving Simulator offroad",
+        "description": "Experience the thrill of offroad trucking! Navigate rugged terrain, deliver cargo through challenging paths, and master powerful trucks in realistic environments. Conquer hills, mud, and rivers in this ultimate truck driving simulator adventure. Ready to drive? Web Dev &lt;a href='https://www.crazygamesonline.com/'&gt;https://www.crazygamesonline.com/&lt;/a&gt;",
+        "thumbnail": "https://img.gamemonetize.com/a6i1ot5d0scwphehyrsl0vned0ezjk8q/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/a6i1ot5d0scwphehyrsl0vned0ezjk8q/",
+        "category": [
+          "action"
+        ],
+        "tags": [
+          "driving",
+          "mentolatux",
+          "offroad",
+          "simulator",
+          "truck",
+          "unity",
+          "webgl"
+        ],
+        "instructions": "Mouse click or tap to play",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34205",
+        "title": "Zombies vs. Sunflowers",
+        "description": "In this action-packed tower defense game, your garden is under siege by relentless zombies! Strategically place unique plants&amp;mdash;each with special abilities&amp;mdash;to stop the shambling invaders. Unlock &amp;amp; Upgrade &amp;ndash; Strengthen your plants to unleash powerful attacks and create an unbeatable defense. Face Fearsome Foes &amp;ndash; Battle waves of zombies, each with their own strengths and weaknesses. Earn Sun &amp;amp; Survive &amp;ndash; Collect resources to grow your arsenal and hold the line! Can you outsmart the undead and protect your home? The battle for survival begins now!",
+        "thumbnail": "https://img.gamemonetize.com/6kw2gj2vjs2uztzkl5xyrxrpreo5t6lo/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/6kw2gj2vjs2uztzkl5xyrxrpreo5t6lo/",
+        "category": [
+          "hypercasual"
+        ],
+        "tags": [
+          "angryplants",
+          "apocalypse",
+          "army",
+          "battle",
+          "casual",
+          "defense",
+          "fruit",
+          "fruits",
+          "hypercasual",
+          "plant",
+          "plants",
+          "tower defense",
+          "zombie"
+        ],
+        "instructions": "Mouse click or tap to play",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34204",
+        "title": "Sweet Beasts",
+        "description": "Match candy. Feed monsters. Unleash the sugar chaos! Step into the wild and whimsical world of Sweet Beasts, a candy-packed match-3 puzzle adventure where adorable monsters have an insatiable sweet tooth! Match colorful candies, trigger explosive combos, and feed your hungry beast buddies as you journey through gooey gumdrop forests, marshmallow mountains, and jelly lagoons. Each level brings new challenges and mischievous monster mayhem! Unlock new creatures, discover their candy-craving powers, and take on sticky obstacles in hundreds of deliciously tricky levels.",
+        "thumbnail": "https://img.gamemonetize.com/h9oc4gnpqgqndct23kpvys6qlgzlo7v4/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/h9oc4gnpqgqndct23kpvys6qlgzlo7v4/",
+        "category": [
+          "hypercasual"
+        ],
+        "tags": [
+          "best games",
+          "match-3",
+          "puzzle"
+        ],
+        "instructions": "Match-3 and win ",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34203",
+        "title": "ThroneHold",
+        "description": "The throne is lost. The castle is cursed. Take it back. In Thronehold, you step into the boots of a lone warrior trapped in a crumbling castle filled with danger, darkness, and long-forgotten secrets. This intense platformer combines fast-paced action, precision jumps, and clever traps set across a labyrinthine stronghold once ruled by kings &amp;mdash; now haunted by creatures of shadow. Leap over deadly spikes, scale ancient towers, unlock hidden paths, and fight your way through cursed knights, spectral beasts, and twisted machines guarding the throne room. Only the strongest can reclaim the Thronehold.",
+        "thumbnail": "https://img.gamemonetize.com/rv7i4vp7fn46vjdgjs8el77c83twubly/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/rv7i4vp7fn46vjdgjs8el77c83twubly/",
+        "category": [
+          "hypercasual"
+        ],
+        "tags": [
+          "king",
+          "obstacle",
+          "platform"
+        ],
+        "instructions": "Avoid obstacles and keep moving Click to jump ",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34202",
+        "title": "Thung Thung Sahur Playgrounds Escape",
+        "description": "Thung Thung Sahur Playgrounds Escape is a survival horror. You must find a way to complete the quest with certain time before Thung Thung catch you!",
+        "thumbnail": "https://img.gamemonetize.com/8tcibyn2omj8rnb6w52fca37crhmexjh/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/8tcibyn2omj8rnb6w52fca37crhmexjh/",
+        "category": [
+          "adventure"
+        ],
+        "tags": [
+          "horror",
+          "tung tung tung",
+          "tung tung tung sahur"
+        ],
+        "instructions": "wasd to move",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34201",
+        "title": "Survival Shooter Game",
+        "description": "Survival Shooter is a fast-paced top-down action game where you must fight off endless waves of enemies. Armed with powerful weapons and quick reflexes, you&amp;rsquo;ll battle through intense arenas, collect power-ups, and unlock upgrades to survive as long as possible. The enemies get stronger, faster, and more aggressive&amp;mdash;only the skilled will last. With stylized visuals, responsive twin-stick controls, and challenging gameplay, Survival Shooter delivers an adrenaline-pumping experience that keeps you coming back for more. How long can you survive the onslaught? Climb the leaderboard and prove your worth in the ultimate survival test.",
+        "thumbnail": "https://img.gamemonetize.com/j7cwr3eola0ddykquvywldrqi5umfm8l/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/j7cwr3eola0ddykquvywldrqi5umfm8l/",
+        "category": [
+          "arcade"
+        ],
+        "tags": [
+          "2d",
+          "attack",
+          "shooter",
+          "survival"
+        ],
+        "instructions": "Mouse click or tap to play",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "id": "34200",
+        "title": "Slime Rain",
+        "description": "Dodge the falling objects and collect as many coins as you can! Fast-paced, reflex-based arcade game that&amp;rsquo;s easy to play but hard to master. How long can you survive?",
+        "thumbnail": "https://img.gamemonetize.com/d0h77hx3taikfukdn3jqgjvh2hz333y3/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/d0h77hx3taikfukdn3jqgjvh2hz333y3/",
+        "category": [
+          "hypercasual"
+        ],
+        "tags": [
+          "2d",
+          "arcade",
+          "avoid",
+          "collection",
+          "endless"
+        ],
+        "instructions": "Keyboard or slide or touch ",
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "id": "34199",
+        "title": "Parking Polly Cars",
+        "description": "Get ready to master the ultimate car parking puzzle! In Parking Poly Cars, your mission is to escape traffic jams by moving the right cars in the right order. Enjoy addictive traffic jam puzzle gameplay that tests your logic and strategy. Slide the cars, unblock the path, and clear the parking lot in this fun and challenging car puzzle game! Perfect for fans of brain games, parking simulators, and traffic jam games. With increasing difficulty and smart levels, this car parking game will keep your brain sharp. Whether youre a casual player or a puzzle pro, enjoy hours of antistress fun!",
+        "thumbnail": "https://img.gamemonetize.com/kcrzitqb6wihdtc7dgarvuhzpbupldn3/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/kcrzitqb6wihdtc7dgarvuhzpbupldn3/",
+        "category": [
+          "puzzles"
+        ],
+        "tags": [
+          "1 player",
+          "3d games",
+          "cars",
+          "casual",
+          "hypercasual",
+          "mobile",
+          "parking",
+          "puzzle",
+          "unity games"
+        ],
+        "instructions": " Mouse Click and drag cars to move them Touch Tap and swipe cars on mobile to slide them ",
+        "width": 1080,
+        "height": 1920
+      },
       {
         "id": "34198",
         "title": "Drag N Boom",
@@ -1887,213 +2095,31 @@
         "instructions": "Mouse click or tap to play",
         "width": 768,
         "height": 1024
-      },
+      }
+    ],
+    "Action": [
       {
-        "id": "34107",
-        "title": "Sprunki Final Adventure",
-        "description": "Enjoy the Sprunki World with this final adventure game. Immerse yourself in the beats and music simulation, create the band and songs, and discover the dark secrets of your favorite characters. Enjoy the good and evil world, edit your tracks and experiment with different game modes and characters types to complete this awesome adventure.",
-        "thumbnail": "https://img.gamemonetize.com/pi59ob2e68whmfav5unp04fvph7m2dtq/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/pi59ob2e68whmfav5unp04fvph7m2dtq/",
-        "category": [
-          "clicker"
-        ],
-        "tags": [
-          "1 player",
-          "2d",
-          "adventure",
-          "amazing",
-          "arcade",
-          "brainrot italian",
-          "casual",
-          "html5 games for your site",
-          "sprunki"
-        ],
-        "instructions": "Mouse click or tap to play",
-        "width": 800,
-        "height": 480
-      },
-      {
-        "id": "34106",
-        "title": "Squishy Slime Maker",
-        "description": "Welcome to Squishy Slime Maker, a casual slime simulator game. If you are full of magical ideas or distinctive imagination, this is the right place for you. Mix the magic ingredients, choose your favorite colors, and have fun touching cute and slimy squishy! Unleash your inner artist to design the beautiful and lovely slimy squishy you want.",
-        "thumbnail": "https://img.gamemonetize.com/3o8zzkf9cyvgrqnxrp7mb6iydxca9c8r/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/3o8zzkf9cyvgrqnxrp7mb6iydxca9c8r/",
-        "category": [
-          "hypercasual"
-        ],
-        "tags": [
-          "coloring",
-          "magic",
-          "simulator"
-        ],
-        "instructions": "Mouse click or tap to play ",
-        "width": 720,
-        "height": 1280
-      },
-      {
-        "id": "34105",
-        "title": "Impossible Cargo Truck Driver 2025",
-        "description": "Impossible Cargo Truck Driver 2025 is a thrilling driving simulator that challenges you to transport heavy cargo across extreme, treacherous terrains. Test your skills on narrow mountain roads, sky-high bridges, and obstacle-filled paths. Web Dev &lt;a href='https://www.kizigamesx.com/'&gt;https://www.kizigamesx.com/&lt;/a&gt; +",
-        "thumbnail": "https://img.gamemonetize.com/u5vex6uy1w2tnblog2e9ft1jdc1cjvol/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/u5vex6uy1w2tnblog2e9ft1jdc1cjvol/",
+        "id": "34206",
+        "title": "Truck Driving Simulator offroad",
+        "description": "Experience the thrill of offroad trucking! Navigate rugged terrain, deliver cargo through challenging paths, and master powerful trucks in realistic environments. Conquer hills, mud, and rivers in this ultimate truck driving simulator adventure. Ready to drive? Web Dev &lt;a href='https://www.crazygamesonline.com/'&gt;https://www.crazygamesonline.com/&lt;/a&gt;",
+        "thumbnail": "https://img.gamemonetize.com/a6i1ot5d0scwphehyrsl0vned0ezjk8q/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/a6i1ot5d0scwphehyrsl0vned0ezjk8q/",
         "category": [
           "action"
         ],
         "tags": [
-          "cargo",
           "driving",
           "mentolatux",
-          "transport",
+          "offroad",
+          "simulator",
           "truck",
           "unity",
           "webgl"
-        ],
-        "instructions": "WASD to drive the truck",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "id": "34104",
-        "title": "Fire Ring",
-        "description": "Fire Ring is a fast-paced, fiery challenge that will test your timing and reflexes! Guide your blazing orb through rotating rings, shifting gaps, and fiery obstacles in a game where one wrong move means game over. Tap to jump through openings, avoid the flames, and climb your way to the highest score. With vibrant visuals, smooth animations, and addictive one-touch gameplay, Fire Ring is perfect for quick play sessions or endless challenges. Unlock new fiery effects, beat your best score, and conquer the heat. Can you survive the burn and master the ring? Let the flame begin!",
-        "thumbnail": "https://img.gamemonetize.com/lqw68u7gzk1pn7dpst8a08ta9rhai7k1/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/lqw68u7gzk1pn7dpst8a08ta9rhai7k1/",
-        "category": [
-          "shooting"
-        ],
-        "tags": [
-          "arcade",
-          "ball",
-          "best",
-          "best games",
-          "click",
-          "escape",
-          "fire",
-          "firefighters",
-          "point and click",
-          "puzzle",
-          "shooting",
-          "space"
         ],
         "instructions": "Mouse click or tap to play",
         "width": 800,
         "height": 600
       },
-      {
-        "id": "34103",
-        "title": "My Memory Boost",
-        "description": "My Memory Boost is a fun and brain-training card-matching game designed to test and improve your memory skills! Flip the cards, remember their positions, and match pairs of the same numbers before time runs out. The faster you match, the higher your score! With multiple difficulty levels, engaging challenges, and a sleek design, My Memory Boost is perfect for players of all ages looking to sharpen their minds. Can you remember all the right pairs and achieve the highest score? Play now and give your brain the ultimate boost!",
-        "thumbnail": "https://img.gamemonetize.com/ui49kbpjgcgh4ihlnydj81sk45iv7j1e/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/ui49kbpjgcgh4ihlnydj81sk45iv7j1e/",
-        "category": [
-          "arcade"
-        ],
-        "tags": [
-          "1 player",
-          "2d",
-          "math",
-          "memory"
-        ],
-        "instructions": "Tap on card and match ",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "id": "34102",
-        "title": "Uno Party Card",
-        "description": "Want a fun card battle with friends? Uno-Party Card brings the classic UNO card game to your screen. Allow you to challenge opponents from around the world anytime, anywhere. Its a multiplayer card game, where everyone has to use the cards in their hand as well as find the best strategy in an unpredictable situation.",
-        "thumbnail": "https://img.gamemonetize.com/tee4g02928vevs4fyc6qi7g55kh657m8/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/tee4g02928vevs4fyc6qi7g55kh657m8/",
-        "category": [
-          "hypercasual"
-        ],
-        "tags": [
-          "card",
-          "classic",
-          "multiplayer"
-        ],
-        "instructions": "Mouse click or tap to play ",
-        "width": 1334,
-        "height": 750
-      },
-      {
-        "id": "34101",
-        "title": "Tung Tung Tung Sahur Who Is?",
-        "description": "Tung Tung Tung Sahur Who Is? is a surreal, meme-fueled quiz game that tests not your knowledge &amp;mdash; but your ability to navigate nonsense logic and meme chaos. Built with no sound, this text-based experience uses expressive visuals, glitched fonts, and absurd humor to deliver the ultimate brainrot challenge.",
-        "thumbnail": "https://img.gamemonetize.com/jmbtu0nkxitxjsq9ihsp641h9di5dku0/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/jmbtu0nkxitxjsq9ihsp641h9di5dku0/",
-        "category": [
-          "puzzles"
-        ],
-        "tags": [
-          "1 player",
-          "brainrot",
-          "italian brainrot",
-          "tung",
-          "tung tung",
-          "tung tung tung sahur"
-        ],
-        "instructions": "mouse only",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "id": "34100",
-        "title": "Shell Swap Pro",
-        "description": "Shell Swap Match. Swap. Splash into fun! Dive into a relaxing underwater adventure in Shell Swap, the ultimate sea-themed match-3 puzzle game! Swap colorful sea shells, pearls, and starfish to create powerful combos and clear the board. With soothing ocean vibes and satisfying gameplay, every level is a splash of fun! Whether youre a casual puzzler or a matching master, Shell Swap is your perfect escape beneath the waves.",
-        "thumbnail": "https://img.gamemonetize.com/kzrf9dx7zolud55vm1irqmqfwed1831c/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/kzrf9dx7zolud55vm1irqmqfwed1831c/",
-        "category": [
-          "clicker"
-        ],
-        "tags": [
-          "best games",
-          "casual",
-          "fishing",
-          "match-3"
-        ],
-        "instructions": "Match-3 and clear the required items ",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "id": "34099",
-        "title": "Collect And Break",
-        "description": "Dive into a adventure in Collect And Break which is running game! In this fun arcade game keep collecting coin and food(get energy to break the walls) . You need to be flexible , making sure to collect as coin and food as possible during the run.",
-        "thumbnail": "https://img.gamemonetize.com/bmzifa3ps1halac7g1qu9bxyqn17nxm5/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/bmzifa3ps1halac7g1qu9bxyqn17nxm5/",
-        "category": [
-          "hypercasual"
-        ],
-        "tags": [
-          "1 player",
-          "mouse",
-          "running"
-        ],
-        "instructions": "Mouse click or tap to play Use Mouse left click Drag to move player left right ",
-        "width": 450,
-        "height": 600
-      },
-      {
-        "id": "34098",
-        "title": "Idle Bathroom Empire Tycoon",
-        "description": "Ready to become the ultimate bathroom tycoon? In this exciting mix of simulation, management, and idle tycoon gameplay, you&amp;rsquo;ll start with a small restroom. Grow it into a luxurious five-star hygiene haven! Upgrade facilities, optimize services, and expand your empire to make your bathroom the most popular spot in town. Manage your front desk with care, and faster cashiering will give you more cash flow.",
-        "thumbnail": "https://img.gamemonetize.com/iwebmom4m4nlng0sf9mi7owi55p39cl9/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/iwebmom4m4nlng0sf9mi7owi55p39cl9/",
-        "category": [
-          "hypercasual"
-        ],
-        "tags": [
-          "fun",
-          "idle",
-          "simulation"
-        ],
-        "instructions": "Mouse click or tap to play ",
-        "width": 1280,
-        "height": 720
-      }
-    ],
-    "Action": [
       {
         "id": "34192",
         "title": "Real Cargo Truck Driver 2025",
@@ -4299,33 +4325,27 @@
         "instructions": "Drive your truck using wasd change camera C click on the screen and can look around ",
         "width": 800,
         "height": 600
-      },
-      {
-        "id": "31344",
-        "title": "African Cheetah Hunting Simulator",
-        "description": "In this game, the cheetah needs to find and hunt zebras. Many levels are waiting to be completed, each with a specific number of animals to hunt. The game features a realistic African savanna environment with trees, grass, and large, dangerous animals like rhinoceroses. Website Developer &lt;a href='https://www.bestcrazygames.com/'&gt;https://www.bestcrazygames.com/&lt;/a&gt;",
-        "thumbnail": "https://img.gamemonetize.com/imbgcp7ugx7zj4r81ckmvdw6x8w9mik0/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/imbgcp7ugx7zj4r81ckmvdw6x8w9mik0/",
-        "category": [
-          "action"
-        ],
-        "tags": [
-          "action",
-          "animal",
-          "hunter",
-          "hunting",
-          "mentolatux",
-          "simulator",
-          "skill",
-          "unity3d",
-          "webgl"
-        ],
-        "instructions": "Use WASD to controll the animal and button from the screen to run jump attack ",
-        "width": 800,
-        "height": 600
       }
     ],
     "Adventure": [
+      {
+        "id": "34202",
+        "title": "Thung Thung Sahur Playgrounds Escape",
+        "description": "Thung Thung Sahur Playgrounds Escape is a survival horror. You must find a way to complete the quest with certain time before Thung Thung catch you!",
+        "thumbnail": "https://img.gamemonetize.com/8tcibyn2omj8rnb6w52fca37crhmexjh/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/8tcibyn2omj8rnb6w52fca37crhmexjh/",
+        "category": [
+          "adventure"
+        ],
+        "tags": [
+          "horror",
+          "tung tung tung",
+          "tung tung tung sahur"
+        ],
+        "instructions": "wasd to move",
+        "width": 800,
+        "height": 600
+      },
       {
         "id": "34198",
         "title": "Drag N Boom",
@@ -6380,28 +6400,28 @@
         "instructions": "for mobile use the touch screen for pc use the key arrow and mouse",
         "width": 1920,
         "height": 1080
-      },
-      {
-        "id": "32093",
-        "title": "Mad Shark Fish",
-        "description": "Mad Shark by gamed is an exhilarating mobile game where players take on the role of a fearsome, rampaging shark in an underwater adventure",
-        "thumbnail": "https://img.gamemonetize.com/8587rz7plj1nx0ws65c2lz2ntbzeq4b2/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/8587rz7plj1nx0ws65c2lz2ntbzeq4b2/",
-        "category": [
-          "adventure"
-        ],
-        "tags": [
-          "adventure",
-          "fish",
-          "fishing",
-          "fun"
-        ],
-        "instructions": "for mobile use the touch for pc use the mouse",
-        "width": 1920,
-        "height": 1080
       }
     ],
     "Arcade": [
+      {
+        "id": "34201",
+        "title": "Survival Shooter Game",
+        "description": "Survival Shooter is a fast-paced top-down action game where you must fight off endless waves of enemies. Armed with powerful weapons and quick reflexes, you&amp;rsquo;ll battle through intense arenas, collect power-ups, and unlock upgrades to survive as long as possible. The enemies get stronger, faster, and more aggressive&amp;mdash;only the skilled will last. With stylized visuals, responsive twin-stick controls, and challenging gameplay, Survival Shooter delivers an adrenaline-pumping experience that keeps you coming back for more. How long can you survive the onslaught? Climb the leaderboard and prove your worth in the ultimate survival test.",
+        "thumbnail": "https://img.gamemonetize.com/j7cwr3eola0ddykquvywldrqi5umfm8l/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/j7cwr3eola0ddykquvywldrqi5umfm8l/",
+        "category": [
+          "arcade"
+        ],
+        "tags": [
+          "2d",
+          "attack",
+          "shooter",
+          "survival"
+        ],
+        "instructions": "Mouse click or tap to play",
+        "width": 1280,
+        "height": 720
+      },
       {
         "id": "34193",
         "title": "Labubu and Friends   2Player",
@@ -8417,24 +8437,6 @@
         "instructions": "Tap or mouse click to play",
         "width": 720,
         "height": 1280
-      },
-      {
-        "id": "33584",
-        "title": "Bbq Stack Run",
-        "description": "Enter a running arcade adventure filled with food and fun challenges. BBQ Stack Run takes you through the craziest BBQ-collecting parkour ever. Pick up various ingredients such as beef, chicken, sausage and more on the track as you run. Sprinkle them with barbecue seasoning and cook them through.",
-        "thumbnail": "https://img.gamemonetize.com/st6twsce0w84oiet97lt3b61rd4hgzb9/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/st6twsce0w84oiet97lt3b61rd4hgzb9/",
-        "category": [
-          "arcade"
-        ],
-        "tags": [
-          "cook",
-          "food",
-          "run"
-        ],
-        "instructions": "Mouse click or tap to play ",
-        "width": 1334,
-        "height": 750
       }
     ],
     "Board": [],
@@ -19021,6 +19023,214 @@
     "random": [],
     "newest": [
       {
+        "id": "34208",
+        "title": "Sprunki Ketchup Mod",
+        "description": "Sprunki Ketchup Mod - A game with physics of throws and ragdoll elements. Throw ketchup so as to get into the Sprunki and turn it into a ketchup version! Try your hand at 30 levels! The difficulty will increase, and the maps will increase. Think with your head: calculate the perfect trajectory of the throw and use the bounces to win!",
+        "thumbnail": "https://img.gamemonetize.com/7tvjo8x6w1flu3fvadry5mz8qbhotkxo/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/7tvjo8x6w1flu3fvadry5mz8qbhotkxo/",
+        "category": [
+          "puzzles"
+        ],
+        "tags": [
+          "1 player",
+          "2d",
+          "angrybirds",
+          "casual",
+          "mobile",
+          "physics",
+          "sprunki"
+        ],
+        "instructions": "Your mission throw ketchup at Simon Use the ketchup as a projectile stretch it like a slingshot and throw it accurately ",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34207",
+        "title": "BlockPuzzleMagic",
+        "description": "Assemble and eliminate the blocks. Various shaped blocks will randomly appear at the bottom. Drag the blocks into the upper box. They will be eliminated when a row or column is filled. Come and give it a try.",
+        "thumbnail": "https://img.gamemonetize.com/z6gxwxdgunqmjmhva7j5kszeya71ls9u/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/z6gxwxdgunqmjmhva7j5kszeya71ls9u/",
+        "category": [
+          "puzzles"
+        ],
+        "tags": [
+          "1 player",
+          "arcade",
+          "puzzle",
+          "puzzleblock"
+        ],
+        "instructions": "Mouse click or tap to play",
+        "width": 350,
+        "height": 600
+      },
+      {
+        "id": "34206",
+        "title": "Truck Driving Simulator offroad",
+        "description": "Experience the thrill of offroad trucking! Navigate rugged terrain, deliver cargo through challenging paths, and master powerful trucks in realistic environments. Conquer hills, mud, and rivers in this ultimate truck driving simulator adventure. Ready to drive? Web Dev &lt;a href='https://www.crazygamesonline.com/'&gt;https://www.crazygamesonline.com/&lt;/a&gt;",
+        "thumbnail": "https://img.gamemonetize.com/a6i1ot5d0scwphehyrsl0vned0ezjk8q/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/a6i1ot5d0scwphehyrsl0vned0ezjk8q/",
+        "category": [
+          "action"
+        ],
+        "tags": [
+          "driving",
+          "mentolatux",
+          "offroad",
+          "simulator",
+          "truck",
+          "unity",
+          "webgl"
+        ],
+        "instructions": "Mouse click or tap to play",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34205",
+        "title": "Zombies vs. Sunflowers",
+        "description": "In this action-packed tower defense game, your garden is under siege by relentless zombies! Strategically place unique plants&amp;mdash;each with special abilities&amp;mdash;to stop the shambling invaders. Unlock &amp;amp; Upgrade &amp;ndash; Strengthen your plants to unleash powerful attacks and create an unbeatable defense. Face Fearsome Foes &amp;ndash; Battle waves of zombies, each with their own strengths and weaknesses. Earn Sun &amp;amp; Survive &amp;ndash; Collect resources to grow your arsenal and hold the line! Can you outsmart the undead and protect your home? The battle for survival begins now!",
+        "thumbnail": "https://img.gamemonetize.com/6kw2gj2vjs2uztzkl5xyrxrpreo5t6lo/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/6kw2gj2vjs2uztzkl5xyrxrpreo5t6lo/",
+        "category": [
+          "hypercasual"
+        ],
+        "tags": [
+          "angryplants",
+          "apocalypse",
+          "army",
+          "battle",
+          "casual",
+          "defense",
+          "fruit",
+          "fruits",
+          "hypercasual",
+          "plant",
+          "plants",
+          "tower defense",
+          "zombie"
+        ],
+        "instructions": "Mouse click or tap to play",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34204",
+        "title": "Sweet Beasts",
+        "description": "Match candy. Feed monsters. Unleash the sugar chaos! Step into the wild and whimsical world of Sweet Beasts, a candy-packed match-3 puzzle adventure where adorable monsters have an insatiable sweet tooth! Match colorful candies, trigger explosive combos, and feed your hungry beast buddies as you journey through gooey gumdrop forests, marshmallow mountains, and jelly lagoons. Each level brings new challenges and mischievous monster mayhem! Unlock new creatures, discover their candy-craving powers, and take on sticky obstacles in hundreds of deliciously tricky levels.",
+        "thumbnail": "https://img.gamemonetize.com/h9oc4gnpqgqndct23kpvys6qlgzlo7v4/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/h9oc4gnpqgqndct23kpvys6qlgzlo7v4/",
+        "category": [
+          "hypercasual"
+        ],
+        "tags": [
+          "best games",
+          "match-3",
+          "puzzle"
+        ],
+        "instructions": "Match-3 and win ",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34203",
+        "title": "ThroneHold",
+        "description": "The throne is lost. The castle is cursed. Take it back. In Thronehold, you step into the boots of a lone warrior trapped in a crumbling castle filled with danger, darkness, and long-forgotten secrets. This intense platformer combines fast-paced action, precision jumps, and clever traps set across a labyrinthine stronghold once ruled by kings &amp;mdash; now haunted by creatures of shadow. Leap over deadly spikes, scale ancient towers, unlock hidden paths, and fight your way through cursed knights, spectral beasts, and twisted machines guarding the throne room. Only the strongest can reclaim the Thronehold.",
+        "thumbnail": "https://img.gamemonetize.com/rv7i4vp7fn46vjdgjs8el77c83twubly/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/rv7i4vp7fn46vjdgjs8el77c83twubly/",
+        "category": [
+          "hypercasual"
+        ],
+        "tags": [
+          "king",
+          "obstacle",
+          "platform"
+        ],
+        "instructions": "Avoid obstacles and keep moving Click to jump ",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34202",
+        "title": "Thung Thung Sahur Playgrounds Escape",
+        "description": "Thung Thung Sahur Playgrounds Escape is a survival horror. You must find a way to complete the quest with certain time before Thung Thung catch you!",
+        "thumbnail": "https://img.gamemonetize.com/8tcibyn2omj8rnb6w52fca37crhmexjh/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/8tcibyn2omj8rnb6w52fca37crhmexjh/",
+        "category": [
+          "adventure"
+        ],
+        "tags": [
+          "horror",
+          "tung tung tung",
+          "tung tung tung sahur"
+        ],
+        "instructions": "wasd to move",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "id": "34201",
+        "title": "Survival Shooter Game",
+        "description": "Survival Shooter is a fast-paced top-down action game where you must fight off endless waves of enemies. Armed with powerful weapons and quick reflexes, you&amp;rsquo;ll battle through intense arenas, collect power-ups, and unlock upgrades to survive as long as possible. The enemies get stronger, faster, and more aggressive&amp;mdash;only the skilled will last. With stylized visuals, responsive twin-stick controls, and challenging gameplay, Survival Shooter delivers an adrenaline-pumping experience that keeps you coming back for more. How long can you survive the onslaught? Climb the leaderboard and prove your worth in the ultimate survival test.",
+        "thumbnail": "https://img.gamemonetize.com/j7cwr3eola0ddykquvywldrqi5umfm8l/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/j7cwr3eola0ddykquvywldrqi5umfm8l/",
+        "category": [
+          "arcade"
+        ],
+        "tags": [
+          "2d",
+          "attack",
+          "shooter",
+          "survival"
+        ],
+        "instructions": "Mouse click or tap to play",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "id": "34200",
+        "title": "Slime Rain",
+        "description": "Dodge the falling objects and collect as many coins as you can! Fast-paced, reflex-based arcade game that&amp;rsquo;s easy to play but hard to master. How long can you survive?",
+        "thumbnail": "https://img.gamemonetize.com/d0h77hx3taikfukdn3jqgjvh2hz333y3/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/d0h77hx3taikfukdn3jqgjvh2hz333y3/",
+        "category": [
+          "hypercasual"
+        ],
+        "tags": [
+          "2d",
+          "arcade",
+          "avoid",
+          "collection",
+          "endless"
+        ],
+        "instructions": "Keyboard or slide or touch ",
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "id": "34199",
+        "title": "Parking Polly Cars",
+        "description": "Get ready to master the ultimate car parking puzzle! In Parking Poly Cars, your mission is to escape traffic jams by moving the right cars in the right order. Enjoy addictive traffic jam puzzle gameplay that tests your logic and strategy. Slide the cars, unblock the path, and clear the parking lot in this fun and challenging car puzzle game! Perfect for fans of brain games, parking simulators, and traffic jam games. With increasing difficulty and smart levels, this car parking game will keep your brain sharp. Whether youre a casual player or a puzzle pro, enjoy hours of antistress fun!",
+        "thumbnail": "https://img.gamemonetize.com/kcrzitqb6wihdtc7dgarvuhzpbupldn3/512x384.jpg",
+        "gameUrl": "https://html5.gamemonetize.com/kcrzitqb6wihdtc7dgarvuhzpbupldn3/",
+        "category": [
+          "puzzles"
+        ],
+        "tags": [
+          "1 player",
+          "3d games",
+          "cars",
+          "casual",
+          "hypercasual",
+          "mobile",
+          "parking",
+          "puzzle",
+          "unity games"
+        ],
+        "instructions": " Mouse Click and drag cars to move them Touch Tap and swipe cars on mobile to slide them ",
+        "width": 1080,
+        "height": 1920
+      },
+      {
         "id": "34198",
         "title": "Drag N Boom",
         "description": "DragnBoom is a fun old-school arcade game combining speed and precision! &amp;bull; Dive into an imaginary medieval universe full of heroes, echoing the greatest arcade and platform games of all time.",
@@ -20904,214 +21114,218 @@
         "instructions": "Mouse click or tap to play",
         "width": 768,
         "height": 1024
-      },
-      {
-        "id": "34107",
-        "title": "Sprunki Final Adventure",
-        "description": "Enjoy the Sprunki World with this final adventure game. Immerse yourself in the beats and music simulation, create the band and songs, and discover the dark secrets of your favorite characters. Enjoy the good and evil world, edit your tracks and experiment with different game modes and characters types to complete this awesome adventure.",
-        "thumbnail": "https://img.gamemonetize.com/pi59ob2e68whmfav5unp04fvph7m2dtq/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/pi59ob2e68whmfav5unp04fvph7m2dtq/",
-        "category": [
-          "clicker"
-        ],
-        "tags": [
-          "1 player",
-          "2d",
-          "adventure",
-          "amazing",
-          "arcade",
-          "brainrot italian",
-          "casual",
-          "html5 games for your site",
-          "sprunki"
-        ],
-        "instructions": "Mouse click or tap to play",
-        "width": 800,
-        "height": 480
-      },
-      {
-        "id": "34106",
-        "title": "Squishy Slime Maker",
-        "description": "Welcome to Squishy Slime Maker, a casual slime simulator game. If you are full of magical ideas or distinctive imagination, this is the right place for you. Mix the magic ingredients, choose your favorite colors, and have fun touching cute and slimy squishy! Unleash your inner artist to design the beautiful and lovely slimy squishy you want.",
-        "thumbnail": "https://img.gamemonetize.com/3o8zzkf9cyvgrqnxrp7mb6iydxca9c8r/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/3o8zzkf9cyvgrqnxrp7mb6iydxca9c8r/",
-        "category": [
-          "hypercasual"
-        ],
-        "tags": [
-          "coloring",
-          "magic",
-          "simulator"
-        ],
-        "instructions": "Mouse click or tap to play ",
-        "width": 720,
-        "height": 1280
-      },
-      {
-        "id": "34105",
-        "title": "Impossible Cargo Truck Driver 2025",
-        "description": "Impossible Cargo Truck Driver 2025 is a thrilling driving simulator that challenges you to transport heavy cargo across extreme, treacherous terrains. Test your skills on narrow mountain roads, sky-high bridges, and obstacle-filled paths. Web Dev &lt;a href='https://www.kizigamesx.com/'&gt;https://www.kizigamesx.com/&lt;/a&gt; +",
-        "thumbnail": "https://img.gamemonetize.com/u5vex6uy1w2tnblog2e9ft1jdc1cjvol/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/u5vex6uy1w2tnblog2e9ft1jdc1cjvol/",
-        "category": [
-          "action"
-        ],
-        "tags": [
-          "cargo",
-          "driving",
-          "mentolatux",
-          "transport",
-          "truck",
-          "unity",
-          "webgl"
-        ],
-        "instructions": "WASD to drive the truck",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "id": "34104",
-        "title": "Fire Ring",
-        "description": "Fire Ring is a fast-paced, fiery challenge that will test your timing and reflexes! Guide your blazing orb through rotating rings, shifting gaps, and fiery obstacles in a game where one wrong move means game over. Tap to jump through openings, avoid the flames, and climb your way to the highest score. With vibrant visuals, smooth animations, and addictive one-touch gameplay, Fire Ring is perfect for quick play sessions or endless challenges. Unlock new fiery effects, beat your best score, and conquer the heat. Can you survive the burn and master the ring? Let the flame begin!",
-        "thumbnail": "https://img.gamemonetize.com/lqw68u7gzk1pn7dpst8a08ta9rhai7k1/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/lqw68u7gzk1pn7dpst8a08ta9rhai7k1/",
-        "category": [
-          "shooting"
-        ],
-        "tags": [
-          "arcade",
-          "ball",
-          "best",
-          "best games",
-          "click",
-          "escape",
-          "fire",
-          "firefighters",
-          "point and click",
-          "puzzle",
-          "shooting",
-          "space"
-        ],
-        "instructions": "Mouse click or tap to play",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "id": "34103",
-        "title": "My Memory Boost",
-        "description": "My Memory Boost is a fun and brain-training card-matching game designed to test and improve your memory skills! Flip the cards, remember their positions, and match pairs of the same numbers before time runs out. The faster you match, the higher your score! With multiple difficulty levels, engaging challenges, and a sleek design, My Memory Boost is perfect for players of all ages looking to sharpen their minds. Can you remember all the right pairs and achieve the highest score? Play now and give your brain the ultimate boost!",
-        "thumbnail": "https://img.gamemonetize.com/ui49kbpjgcgh4ihlnydj81sk45iv7j1e/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/ui49kbpjgcgh4ihlnydj81sk45iv7j1e/",
-        "category": [
-          "arcade"
-        ],
-        "tags": [
-          "1 player",
-          "2d",
-          "math",
-          "memory"
-        ],
-        "instructions": "Tap on card and match ",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "id": "34102",
-        "title": "Uno Party Card",
-        "description": "Want a fun card battle with friends? Uno-Party Card brings the classic UNO card game to your screen. Allow you to challenge opponents from around the world anytime, anywhere. Its a multiplayer card game, where everyone has to use the cards in their hand as well as find the best strategy in an unpredictable situation.",
-        "thumbnail": "https://img.gamemonetize.com/tee4g02928vevs4fyc6qi7g55kh657m8/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/tee4g02928vevs4fyc6qi7g55kh657m8/",
-        "category": [
-          "hypercasual"
-        ],
-        "tags": [
-          "card",
-          "classic",
-          "multiplayer"
-        ],
-        "instructions": "Mouse click or tap to play ",
-        "width": 1334,
-        "height": 750
-      },
-      {
-        "id": "34101",
-        "title": "Tung Tung Tung Sahur Who Is?",
-        "description": "Tung Tung Tung Sahur Who Is? is a surreal, meme-fueled quiz game that tests not your knowledge &amp;mdash; but your ability to navigate nonsense logic and meme chaos. Built with no sound, this text-based experience uses expressive visuals, glitched fonts, and absurd humor to deliver the ultimate brainrot challenge.",
-        "thumbnail": "https://img.gamemonetize.com/jmbtu0nkxitxjsq9ihsp641h9di5dku0/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/jmbtu0nkxitxjsq9ihsp641h9di5dku0/",
-        "category": [
-          "puzzles"
-        ],
-        "tags": [
-          "1 player",
-          "brainrot",
-          "italian brainrot",
-          "tung",
-          "tung tung",
-          "tung tung tung sahur"
-        ],
-        "instructions": "mouse only",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "id": "34100",
-        "title": "Shell Swap Pro",
-        "description": "Shell Swap Match. Swap. Splash into fun! Dive into a relaxing underwater adventure in Shell Swap, the ultimate sea-themed match-3 puzzle game! Swap colorful sea shells, pearls, and starfish to create powerful combos and clear the board. With soothing ocean vibes and satisfying gameplay, every level is a splash of fun! Whether youre a casual puzzler or a matching master, Shell Swap is your perfect escape beneath the waves.",
-        "thumbnail": "https://img.gamemonetize.com/kzrf9dx7zolud55vm1irqmqfwed1831c/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/kzrf9dx7zolud55vm1irqmqfwed1831c/",
-        "category": [
-          "clicker"
-        ],
-        "tags": [
-          "best games",
-          "casual",
-          "fishing",
-          "match-3"
-        ],
-        "instructions": "Match-3 and clear the required items ",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "id": "34099",
-        "title": "Collect And Break",
-        "description": "Dive into a adventure in Collect And Break which is running game! In this fun arcade game keep collecting coin and food(get energy to break the walls) . You need to be flexible , making sure to collect as coin and food as possible during the run.",
-        "thumbnail": "https://img.gamemonetize.com/bmzifa3ps1halac7g1qu9bxyqn17nxm5/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/bmzifa3ps1halac7g1qu9bxyqn17nxm5/",
-        "category": [
-          "hypercasual"
-        ],
-        "tags": [
-          "1 player",
-          "mouse",
-          "running"
-        ],
-        "instructions": "Mouse click or tap to play Use Mouse left click Drag to move player left right ",
-        "width": 450,
-        "height": 600
-      },
-      {
-        "id": "34098",
-        "title": "Idle Bathroom Empire Tycoon",
-        "description": "Ready to become the ultimate bathroom tycoon? In this exciting mix of simulation, management, and idle tycoon gameplay, you&amp;rsquo;ll start with a small restroom. Grow it into a luxurious five-star hygiene haven! Upgrade facilities, optimize services, and expand your empire to make your bathroom the most popular spot in town. Manage your front desk with care, and faster cashiering will give you more cash flow.",
-        "thumbnail": "https://img.gamemonetize.com/iwebmom4m4nlng0sf9mi7owi55p39cl9/512x384.jpg",
-        "gameUrl": "https://html5.gamemonetize.com/iwebmom4m4nlng0sf9mi7owi55p39cl9/",
-        "category": [
-          "hypercasual"
-        ],
-        "tags": [
-          "fun",
-          "idle",
-          "simulation"
-        ],
-        "instructions": "Mouse click or tap to play ",
-        "width": 1280,
-        "height": 720
       }
     ]
   },
   "allGames": [
+    {
+      "id": "34208",
+      "title": "Sprunki Ketchup Mod",
+      "description": "Sprunki Ketchup Mod - A game with physics of throws and ragdoll elements. Throw ketchup so as to get into the Sprunki and turn it into a ketchup version! Try your hand at 30 levels! The difficulty will increase, and the maps will increase. Think with your head: calculate the perfect trajectory of the throw and use the bounces to win!",
+      "thumbnail": "https://img.gamemonetize.com/7tvjo8x6w1flu3fvadry5mz8qbhotkxo/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/7tvjo8x6w1flu3fvadry5mz8qbhotkxo/",
+      "category": [
+        "puzzles"
+      ],
+      "tags": [
+        "1 player",
+        "2d",
+        "angrybirds",
+        "casual",
+        "mobile",
+        "physics",
+        "sprunki"
+      ],
+      "instructions": "Your mission throw ketchup at Simon Use the ketchup as a projectile stretch it like a slingshot and throw it accurately ",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "id": "34207",
+      "title": "BlockPuzzleMagic",
+      "description": "Assemble and eliminate the blocks. Various shaped blocks will randomly appear at the bottom. Drag the blocks into the upper box. They will be eliminated when a row or column is filled. Come and give it a try.",
+      "thumbnail": "https://img.gamemonetize.com/z6gxwxdgunqmjmhva7j5kszeya71ls9u/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/z6gxwxdgunqmjmhva7j5kszeya71ls9u/",
+      "category": [
+        "puzzles"
+      ],
+      "tags": [
+        "1 player",
+        "arcade",
+        "puzzle",
+        "puzzleblock"
+      ],
+      "instructions": "Mouse click or tap to play",
+      "width": 350,
+      "height": 600
+    },
+    {
+      "id": "34206",
+      "title": "Truck Driving Simulator offroad",
+      "description": "Experience the thrill of offroad trucking! Navigate rugged terrain, deliver cargo through challenging paths, and master powerful trucks in realistic environments. Conquer hills, mud, and rivers in this ultimate truck driving simulator adventure. Ready to drive? Web Dev &lt;a href='https://www.crazygamesonline.com/'&gt;https://www.crazygamesonline.com/&lt;/a&gt;",
+      "thumbnail": "https://img.gamemonetize.com/a6i1ot5d0scwphehyrsl0vned0ezjk8q/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/a6i1ot5d0scwphehyrsl0vned0ezjk8q/",
+      "category": [
+        "action"
+      ],
+      "tags": [
+        "driving",
+        "mentolatux",
+        "offroad",
+        "simulator",
+        "truck",
+        "unity",
+        "webgl"
+      ],
+      "instructions": "Mouse click or tap to play",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "id": "34205",
+      "title": "Zombies vs. Sunflowers",
+      "description": "In this action-packed tower defense game, your garden is under siege by relentless zombies! Strategically place unique plants&amp;mdash;each with special abilities&amp;mdash;to stop the shambling invaders. Unlock &amp;amp; Upgrade &amp;ndash; Strengthen your plants to unleash powerful attacks and create an unbeatable defense. Face Fearsome Foes &amp;ndash; Battle waves of zombies, each with their own strengths and weaknesses. Earn Sun &amp;amp; Survive &amp;ndash; Collect resources to grow your arsenal and hold the line! Can you outsmart the undead and protect your home? The battle for survival begins now!",
+      "thumbnail": "https://img.gamemonetize.com/6kw2gj2vjs2uztzkl5xyrxrpreo5t6lo/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/6kw2gj2vjs2uztzkl5xyrxrpreo5t6lo/",
+      "category": [
+        "hypercasual"
+      ],
+      "tags": [
+        "angryplants",
+        "apocalypse",
+        "army",
+        "battle",
+        "casual",
+        "defense",
+        "fruit",
+        "fruits",
+        "hypercasual",
+        "plant",
+        "plants",
+        "tower defense",
+        "zombie"
+      ],
+      "instructions": "Mouse click or tap to play",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "id": "34204",
+      "title": "Sweet Beasts",
+      "description": "Match candy. Feed monsters. Unleash the sugar chaos! Step into the wild and whimsical world of Sweet Beasts, a candy-packed match-3 puzzle adventure where adorable monsters have an insatiable sweet tooth! Match colorful candies, trigger explosive combos, and feed your hungry beast buddies as you journey through gooey gumdrop forests, marshmallow mountains, and jelly lagoons. Each level brings new challenges and mischievous monster mayhem! Unlock new creatures, discover their candy-craving powers, and take on sticky obstacles in hundreds of deliciously tricky levels.",
+      "thumbnail": "https://img.gamemonetize.com/h9oc4gnpqgqndct23kpvys6qlgzlo7v4/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/h9oc4gnpqgqndct23kpvys6qlgzlo7v4/",
+      "category": [
+        "hypercasual"
+      ],
+      "tags": [
+        "best games",
+        "match-3",
+        "puzzle"
+      ],
+      "instructions": "Match-3 and win ",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "id": "34203",
+      "title": "ThroneHold",
+      "description": "The throne is lost. The castle is cursed. Take it back. In Thronehold, you step into the boots of a lone warrior trapped in a crumbling castle filled with danger, darkness, and long-forgotten secrets. This intense platformer combines fast-paced action, precision jumps, and clever traps set across a labyrinthine stronghold once ruled by kings &amp;mdash; now haunted by creatures of shadow. Leap over deadly spikes, scale ancient towers, unlock hidden paths, and fight your way through cursed knights, spectral beasts, and twisted machines guarding the throne room. Only the strongest can reclaim the Thronehold.",
+      "thumbnail": "https://img.gamemonetize.com/rv7i4vp7fn46vjdgjs8el77c83twubly/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/rv7i4vp7fn46vjdgjs8el77c83twubly/",
+      "category": [
+        "hypercasual"
+      ],
+      "tags": [
+        "king",
+        "obstacle",
+        "platform"
+      ],
+      "instructions": "Avoid obstacles and keep moving Click to jump ",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "id": "34202",
+      "title": "Thung Thung Sahur Playgrounds Escape",
+      "description": "Thung Thung Sahur Playgrounds Escape is a survival horror. You must find a way to complete the quest with certain time before Thung Thung catch you!",
+      "thumbnail": "https://img.gamemonetize.com/8tcibyn2omj8rnb6w52fca37crhmexjh/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/8tcibyn2omj8rnb6w52fca37crhmexjh/",
+      "category": [
+        "adventure"
+      ],
+      "tags": [
+        "horror",
+        "tung tung tung",
+        "tung tung tung sahur"
+      ],
+      "instructions": "wasd to move",
+      "width": 800,
+      "height": 600
+    },
+    {
+      "id": "34201",
+      "title": "Survival Shooter Game",
+      "description": "Survival Shooter is a fast-paced top-down action game where you must fight off endless waves of enemies. Armed with powerful weapons and quick reflexes, you&amp;rsquo;ll battle through intense arenas, collect power-ups, and unlock upgrades to survive as long as possible. The enemies get stronger, faster, and more aggressive&amp;mdash;only the skilled will last. With stylized visuals, responsive twin-stick controls, and challenging gameplay, Survival Shooter delivers an adrenaline-pumping experience that keeps you coming back for more. How long can you survive the onslaught? Climb the leaderboard and prove your worth in the ultimate survival test.",
+      "thumbnail": "https://img.gamemonetize.com/j7cwr3eola0ddykquvywldrqi5umfm8l/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/j7cwr3eola0ddykquvywldrqi5umfm8l/",
+      "category": [
+        "arcade"
+      ],
+      "tags": [
+        "2d",
+        "attack",
+        "shooter",
+        "survival"
+      ],
+      "instructions": "Mouse click or tap to play",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "34200",
+      "title": "Slime Rain",
+      "description": "Dodge the falling objects and collect as many coins as you can! Fast-paced, reflex-based arcade game that&amp;rsquo;s easy to play but hard to master. How long can you survive?",
+      "thumbnail": "https://img.gamemonetize.com/d0h77hx3taikfukdn3jqgjvh2hz333y3/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/d0h77hx3taikfukdn3jqgjvh2hz333y3/",
+      "category": [
+        "hypercasual"
+      ],
+      "tags": [
+        "2d",
+        "arcade",
+        "avoid",
+        "collection",
+        "endless"
+      ],
+      "instructions": "Keyboard or slide or touch ",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "34199",
+      "title": "Parking Polly Cars",
+      "description": "Get ready to master the ultimate car parking puzzle! In Parking Poly Cars, your mission is to escape traffic jams by moving the right cars in the right order. Enjoy addictive traffic jam puzzle gameplay that tests your logic and strategy. Slide the cars, unblock the path, and clear the parking lot in this fun and challenging car puzzle game! Perfect for fans of brain games, parking simulators, and traffic jam games. With increasing difficulty and smart levels, this car parking game will keep your brain sharp. Whether youre a casual player or a puzzle pro, enjoy hours of antistress fun!",
+      "thumbnail": "https://img.gamemonetize.com/kcrzitqb6wihdtc7dgarvuhzpbupldn3/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/kcrzitqb6wihdtc7dgarvuhzpbupldn3/",
+      "category": [
+        "puzzles"
+      ],
+      "tags": [
+        "1 player",
+        "3d games",
+        "cars",
+        "casual",
+        "hypercasual",
+        "mobile",
+        "parking",
+        "puzzle",
+        "unity games"
+      ],
+      "instructions": " Mouse Click and drag cars to move them Touch Tap and swipe cars on mobile to slide them ",
+      "width": 1080,
+      "height": 1920
+    },
     {
       "id": "34198",
       "title": "Drag N Boom",
@@ -22998,48 +23212,6 @@
       "height": 1024
     },
     {
-      "id": "34107",
-      "title": "Sprunki Final Adventure",
-      "description": "Enjoy the Sprunki World with this final adventure game. Immerse yourself in the beats and music simulation, create the band and songs, and discover the dark secrets of your favorite characters. Enjoy the good and evil world, edit your tracks and experiment with different game modes and characters types to complete this awesome adventure.",
-      "thumbnail": "https://img.gamemonetize.com/pi59ob2e68whmfav5unp04fvph7m2dtq/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/pi59ob2e68whmfav5unp04fvph7m2dtq/",
-      "category": [
-        "clicker"
-      ],
-      "tags": [
-        "1 player",
-        "2d",
-        "adventure",
-        "amazing",
-        "arcade",
-        "brainrot italian",
-        "casual",
-        "html5 games for your site",
-        "sprunki"
-      ],
-      "instructions": "Mouse click or tap to play",
-      "width": 800,
-      "height": 480
-    },
-    {
-      "id": "34106",
-      "title": "Squishy Slime Maker",
-      "description": "Welcome to Squishy Slime Maker, a casual slime simulator game. If you are full of magical ideas or distinctive imagination, this is the right place for you. Mix the magic ingredients, choose your favorite colors, and have fun touching cute and slimy squishy! Unleash your inner artist to design the beautiful and lovely slimy squishy you want.",
-      "thumbnail": "https://img.gamemonetize.com/3o8zzkf9cyvgrqnxrp7mb6iydxca9c8r/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/3o8zzkf9cyvgrqnxrp7mb6iydxca9c8r/",
-      "category": [
-        "hypercasual"
-      ],
-      "tags": [
-        "coloring",
-        "magic",
-        "simulator"
-      ],
-      "instructions": "Mouse click or tap to play ",
-      "width": 720,
-      "height": 1280
-    },
-    {
       "id": "34105",
       "title": "Impossible Cargo Truck Driver 2025",
       "description": "Impossible Cargo Truck Driver 2025 is a thrilling driving simulator that challenges you to transport heavy cargo across extreme, treacherous terrains. Test your skills on narrow mountain roads, sky-high bridges, and obstacle-filled paths. Web Dev &lt;a href='https://www.kizigamesx.com/'&gt;https://www.kizigamesx.com/&lt;/a&gt; +",
@@ -23060,146 +23232,6 @@
       "instructions": "WASD to drive the truck",
       "width": 800,
       "height": 600
-    },
-    {
-      "id": "34104",
-      "title": "Fire Ring",
-      "description": "Fire Ring is a fast-paced, fiery challenge that will test your timing and reflexes! Guide your blazing orb through rotating rings, shifting gaps, and fiery obstacles in a game where one wrong move means game over. Tap to jump through openings, avoid the flames, and climb your way to the highest score. With vibrant visuals, smooth animations, and addictive one-touch gameplay, Fire Ring is perfect for quick play sessions or endless challenges. Unlock new fiery effects, beat your best score, and conquer the heat. Can you survive the burn and master the ring? Let the flame begin!",
-      "thumbnail": "https://img.gamemonetize.com/lqw68u7gzk1pn7dpst8a08ta9rhai7k1/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/lqw68u7gzk1pn7dpst8a08ta9rhai7k1/",
-      "category": [
-        "shooting"
-      ],
-      "tags": [
-        "arcade",
-        "ball",
-        "best",
-        "best games",
-        "click",
-        "escape",
-        "fire",
-        "firefighters",
-        "point and click",
-        "puzzle",
-        "shooting",
-        "space"
-      ],
-      "instructions": "Mouse click or tap to play",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "id": "34103",
-      "title": "My Memory Boost",
-      "description": "My Memory Boost is a fun and brain-training card-matching game designed to test and improve your memory skills! Flip the cards, remember their positions, and match pairs of the same numbers before time runs out. The faster you match, the higher your score! With multiple difficulty levels, engaging challenges, and a sleek design, My Memory Boost is perfect for players of all ages looking to sharpen their minds. Can you remember all the right pairs and achieve the highest score? Play now and give your brain the ultimate boost!",
-      "thumbnail": "https://img.gamemonetize.com/ui49kbpjgcgh4ihlnydj81sk45iv7j1e/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/ui49kbpjgcgh4ihlnydj81sk45iv7j1e/",
-      "category": [
-        "arcade"
-      ],
-      "tags": [
-        "1 player",
-        "2d",
-        "math",
-        "memory"
-      ],
-      "instructions": "Tap on card and match ",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "id": "34102",
-      "title": "Uno Party Card",
-      "description": "Want a fun card battle with friends? Uno-Party Card brings the classic UNO card game to your screen. Allow you to challenge opponents from around the world anytime, anywhere. Its a multiplayer card game, where everyone has to use the cards in their hand as well as find the best strategy in an unpredictable situation.",
-      "thumbnail": "https://img.gamemonetize.com/tee4g02928vevs4fyc6qi7g55kh657m8/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/tee4g02928vevs4fyc6qi7g55kh657m8/",
-      "category": [
-        "hypercasual"
-      ],
-      "tags": [
-        "card",
-        "classic",
-        "multiplayer"
-      ],
-      "instructions": "Mouse click or tap to play ",
-      "width": 1334,
-      "height": 750
-    },
-    {
-      "id": "34101",
-      "title": "Tung Tung Tung Sahur Who Is?",
-      "description": "Tung Tung Tung Sahur Who Is? is a surreal, meme-fueled quiz game that tests not your knowledge &amp;mdash; but your ability to navigate nonsense logic and meme chaos. Built with no sound, this text-based experience uses expressive visuals, glitched fonts, and absurd humor to deliver the ultimate brainrot challenge.",
-      "thumbnail": "https://img.gamemonetize.com/jmbtu0nkxitxjsq9ihsp641h9di5dku0/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/jmbtu0nkxitxjsq9ihsp641h9di5dku0/",
-      "category": [
-        "puzzles"
-      ],
-      "tags": [
-        "1 player",
-        "brainrot",
-        "italian brainrot",
-        "tung",
-        "tung tung",
-        "tung tung tung sahur"
-      ],
-      "instructions": "mouse only",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "id": "34100",
-      "title": "Shell Swap Pro",
-      "description": "Shell Swap Match. Swap. Splash into fun! Dive into a relaxing underwater adventure in Shell Swap, the ultimate sea-themed match-3 puzzle game! Swap colorful sea shells, pearls, and starfish to create powerful combos and clear the board. With soothing ocean vibes and satisfying gameplay, every level is a splash of fun! Whether youre a casual puzzler or a matching master, Shell Swap is your perfect escape beneath the waves.",
-      "thumbnail": "https://img.gamemonetize.com/kzrf9dx7zolud55vm1irqmqfwed1831c/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/kzrf9dx7zolud55vm1irqmqfwed1831c/",
-      "category": [
-        "clicker"
-      ],
-      "tags": [
-        "best games",
-        "casual",
-        "fishing",
-        "match-3"
-      ],
-      "instructions": "Match-3 and clear the required items ",
-      "width": 800,
-      "height": 600
-    },
-    {
-      "id": "34099",
-      "title": "Collect And Break",
-      "description": "Dive into a adventure in Collect And Break which is running game! In this fun arcade game keep collecting coin and food(get energy to break the walls) . You need to be flexible , making sure to collect as coin and food as possible during the run.",
-      "thumbnail": "https://img.gamemonetize.com/bmzifa3ps1halac7g1qu9bxyqn17nxm5/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/bmzifa3ps1halac7g1qu9bxyqn17nxm5/",
-      "category": [
-        "hypercasual"
-      ],
-      "tags": [
-        "1 player",
-        "mouse",
-        "running"
-      ],
-      "instructions": "Mouse click or tap to play Use Mouse left click Drag to move player left right ",
-      "width": 450,
-      "height": 600
-    },
-    {
-      "id": "34098",
-      "title": "Idle Bathroom Empire Tycoon",
-      "description": "Ready to become the ultimate bathroom tycoon? In this exciting mix of simulation, management, and idle tycoon gameplay, you&amp;rsquo;ll start with a small restroom. Grow it into a luxurious five-star hygiene haven! Upgrade facilities, optimize services, and expand your empire to make your bathroom the most popular spot in town. Manage your front desk with care, and faster cashiering will give you more cash flow.",
-      "thumbnail": "https://img.gamemonetize.com/iwebmom4m4nlng0sf9mi7owi55p39cl9/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/iwebmom4m4nlng0sf9mi7owi55p39cl9/",
-      "category": [
-        "hypercasual"
-      ],
-      "tags": [
-        "fun",
-        "idle",
-        "simulation"
-      ],
-      "instructions": "Mouse click or tap to play ",
-      "width": 1280,
-      "height": 720
     },
     {
       "id": "34094",
@@ -25177,30 +25209,6 @@
       "height": 600
     },
     {
-      "id": "31344",
-      "title": "African Cheetah Hunting Simulator",
-      "description": "In this game, the cheetah needs to find and hunt zebras. Many levels are waiting to be completed, each with a specific number of animals to hunt. The game features a realistic African savanna environment with trees, grass, and large, dangerous animals like rhinoceroses. Website Developer &lt;a href='https://www.bestcrazygames.com/'&gt;https://www.bestcrazygames.com/&lt;/a&gt;",
-      "thumbnail": "https://img.gamemonetize.com/imbgcp7ugx7zj4r81ckmvdw6x8w9mik0/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/imbgcp7ugx7zj4r81ckmvdw6x8w9mik0/",
-      "category": [
-        "action"
-      ],
-      "tags": [
-        "action",
-        "animal",
-        "hunter",
-        "hunting",
-        "mentolatux",
-        "simulator",
-        "skill",
-        "unity3d",
-        "webgl"
-      ],
-      "instructions": "Use WASD to controll the animal and button from the screen to run jump attack ",
-      "width": 800,
-      "height": 600
-    },
-    {
       "id": "34074",
       "title": "Chicken Jockey Tung Tung Sahur Fight",
       "description": "Chicken Jockey: Tung Tung Sahur Fight is an outrageous beat &amp;rsquo;em up game that throws you into the heart of chaotic, side-scrolling street battles &amp;mdash; starring none other than the legendary Chicken Jockey, a baby zombie riding a fearless chicken. Inspired by classic arcade brawlers like Final Fight and Streets of Rage, this game adds a uniquely absurd twist by pitting your undead poultry-powered hero against a horde of brainrotted internet icons and local meme legends.",
@@ -27076,23 +27084,23 @@
       "height": 1080
     },
     {
-      "id": "32093",
-      "title": "Mad Shark Fish",
-      "description": "Mad Shark by gamed is an exhilarating mobile game where players take on the role of a fearsome, rampaging shark in an underwater adventure",
-      "thumbnail": "https://img.gamemonetize.com/8587rz7plj1nx0ws65c2lz2ntbzeq4b2/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/8587rz7plj1nx0ws65c2lz2ntbzeq4b2/",
+      "id": "34103",
+      "title": "My Memory Boost",
+      "description": "My Memory Boost is a fun and brain-training card-matching game designed to test and improve your memory skills! Flip the cards, remember their positions, and match pairs of the same numbers before time runs out. The faster you match, the higher your score! With multiple difficulty levels, engaging challenges, and a sleek design, My Memory Boost is perfect for players of all ages looking to sharpen their minds. Can you remember all the right pairs and achieve the highest score? Play now and give your brain the ultimate boost!",
+      "thumbnail": "https://img.gamemonetize.com/ui49kbpjgcgh4ihlnydj81sk45iv7j1e/512x384.jpg",
+      "gameUrl": "https://html5.gamemonetize.com/ui49kbpjgcgh4ihlnydj81sk45iv7j1e/",
       "category": [
-        "adventure"
+        "arcade"
       ],
       "tags": [
-        "adventure",
-        "fish",
-        "fishing",
-        "fun"
+        "1 player",
+        "2d",
+        "math",
+        "memory"
       ],
-      "instructions": "for mobile use the touch for pc use the mouse",
-      "width": 1920,
-      "height": 1080
+      "instructions": "Tap on card and match ",
+      "width": 800,
+      "height": 600
     },
     {
       "id": "34087",
@@ -28797,24 +28805,6 @@
       "instructions": "Tap or mouse click to play",
       "width": 720,
       "height": 1280
-    },
-    {
-      "id": "33584",
-      "title": "Bbq Stack Run",
-      "description": "Enter a running arcade adventure filled with food and fun challenges. BBQ Stack Run takes you through the craziest BBQ-collecting parkour ever. Pick up various ingredients such as beef, chicken, sausage and more on the track as you run. Sprinkle them with barbecue seasoning and cook them through.",
-      "thumbnail": "https://img.gamemonetize.com/st6twsce0w84oiet97lt3b61rd4hgzb9/512x384.jpg",
-      "gameUrl": "https://html5.gamemonetize.com/st6twsce0w84oiet97lt3b61rd4hgzb9/",
-      "category": [
-        "arcade"
-      ],
-      "tags": [
-        "cook",
-        "food",
-        "run"
-      ],
-      "instructions": "Mouse click or tap to play ",
-      "width": 1334,
-      "height": 750
     },
     {
       "id": "33928",
@@ -38411,5 +38401,5 @@
       "height": 600
     }
   ],
-  "totalGames": 827
+  "totalGames": 826
 }
