@@ -103,11 +103,16 @@ export default function DebugPage() {
       setTests([...testResults]);
 
       try {
-        // 使用一个临时邮箱测试注册请求（不会实际创建用户）
-        const testEmail = `test-${Date.now()}@example.com`;
+        // 使用一个唯一的测试邮箱
+        const timestamp = Date.now();
+        const testEmail = `test-${timestamp}@example.com`;
+        const testPassword = 'TestPassword123!';
+        
+        console.log('开始注册测试，邮箱:', testEmail);
+        
         const { data, error } = await supabase.auth.signUp({
           email: testEmail,
-          password: 'test123456',
+          password: testPassword,
           options: {
             data: {
               display_name: 'Test User'
@@ -115,42 +120,96 @@ export default function DebugPage() {
           }
         });
 
+        console.log('注册测试结果:', { data, error });
+
         if (error) {
-          // 检查错误类型
-          if (error.message.includes('Invalid API key') || error.message.includes('No API key found')) {
-            testResults[2] = {
-              name: '注册功能测试',
-              status: 'error',
-              message: '❌ API 密钥问题',
-              details: error.message
-            };
-          } else if (error.message.includes('Email not confirmed')) {
-            testResults[2] = {
-              name: '注册功能测试',
-              status: 'success',
-              message: '✅ 注册 API 工作正常（需要邮箱确认）'
-            };
-          } else {
-            testResults[2] = {
-              name: '注册功能测试',
-              status: 'error',
-              message: '❌ 注册失败',
-              details: error.message
-            };
+          // 详细分析错误类型
+          const errorAnalysis = {
+            message: error.message,
+            status: error.status || 0,
+            name: error.name || '',
+            
+            // 分类错误
+            isApiKeyError: error.message.includes('Invalid API key') || error.message.includes('No API key found'),
+            isDatabaseError: error.message.includes('Database error') || error.message.includes('saving new user'),
+            isAuthError: error.message.includes('Email') || error.message.includes('Password'),
+            isNetworkError: error.message.includes('fetch') || error.message.includes('network'),
+            
+            // 原始错误对象
+            raw: error
+          };
+          
+          let testMessage = '❌ 注册失败';
+          let testStatus: 'success' | 'error' = 'error';
+          
+          if (errorAnalysis.isApiKeyError) {
+            testMessage = '❌ API 密钥问题';
+          } else if (errorAnalysis.isDatabaseError) {
+            testMessage = '❌ 数据库保存失败 (可能是触发器或表权限问题)';
+          } else if (errorAnalysis.isAuthError) {
+            testMessage = '❌ 认证配置问题';
+          } else if (errorAnalysis.isNetworkError) {
+            testMessage = '❌ 网络连接问题';
+          } else if (error.message.includes('Email not confirmed') || error.message.includes('Signup requires')) {
+            testMessage = '✅ 注册 API 工作正常 (需要邮箱确认)';
+            testStatus = 'success';
+          } else if (error.message.includes('User already registered')) {
+            testMessage = '✅ 注册 API 工作正常 (用户已存在)';
+            testStatus = 'success';
           }
+          
+          testResults[2] = {
+            name: '注册功能测试',
+            status: testStatus,
+            message: testMessage,
+            details: errorAnalysis
+          };
         } else {
+          // 注册成功
+          let successMessage = '✅ 注册 API 工作正常';
+          const hasUser = !!data?.user;
+          const hasSession = !!data?.session;
+          
+          if (hasUser && hasSession) {
+            successMessage = '✅ 注册完全成功 (已创建用户和会话)';
+          } else if (hasUser) {
+            successMessage = '✅ 注册成功 (用户已创建，等待邮箱确认)';
+          }
+          
           testResults[2] = {
             name: '注册功能测试',
             status: 'success',
-            message: '✅ 注册 API 工作正常'
+            message: successMessage,
+            details: {
+              hasUser,
+              hasSession,
+              userId: data?.user?.id,
+              userEmail: data?.user?.email,
+              confirmationSent: data?.user?.email_confirmed_at === null
+            }
           };
+          
+          // 如果成功创建了用户，尝试清理（可选）
+          if (data?.session) {
+            try {
+              await supabase.auth.signOut();
+            } catch (cleanupError) {
+              console.log('清理会话失败（正常）:', cleanupError);
+            }
+          }
         }
       } catch (error) {
+        console.error('注册测试异常:', error);
         testResults[2] = {
           name: '注册功能测试',
           status: 'error',
           message: '❌ 注册测试异常',
-          details: error instanceof Error ? error.message : '未知错误'
+          details: {
+            error: error instanceof Error ? error.message : '未知错误',
+            stack: error instanceof Error ? error.stack : null,
+            type: typeof error,
+            name: error instanceof Error ? error.name : 'Unknown'
+          }
         };
       }
 
@@ -163,30 +222,165 @@ export default function DebugPage() {
       setTests([...testResults]);
 
       try {
-        const { data, error } = await supabase
-          .from('user_profiles')
-          .select('count(*)')
-          .limit(1);
+        // 测试多个不同的查询
+        const dbTests = [];
+        
+        // 测试 1: 简单查询
+        try {
+          const { data: userData, error: userError } = await supabase
+            .from('user_profiles')
+            .select('id')
+            .limit(1);
+          
+          dbTests.push({
+            name: 'user_profiles 表查询',
+            success: !userError,
+            error: userError?.message,
+            details: userError
+          });
+        } catch (err) {
+          dbTests.push({
+            name: 'user_profiles 表查询',
+            success: false,
+            error: err instanceof Error ? err.message : '未知错误',
+            details: err
+          });
+        }
 
-        if (error) {
+        // 测试 2: 检查表权限
+        try {
+          const { data: authData, error: authError } = await supabase.auth.getUser();
+          dbTests.push({
+            name: '当前用户状态',
+            success: !authError,
+            error: authError?.message,
+            details: { 
+              hasUser: !!authData?.user,
+              userId: authData?.user?.id 
+            }
+          });
+        } catch (err) {
+          dbTests.push({
+            name: '当前用户状态',
+            success: false,
+            error: err instanceof Error ? err.message : '未知错误',
+            details: err
+          });
+        }
+
+        // 测试 3: 测试 contact_messages 表
+        try {
+          const { data: contactData, error: contactError } = await supabase
+            .from('contact_messages')
+            .select('id')
+            .limit(1);
+          
+          dbTests.push({
+            name: 'contact_messages 表查询',
+            success: !contactError,
+            error: contactError?.message,
+            details: contactError
+          });
+        } catch (err) {
+          dbTests.push({
+            name: 'contact_messages 表查询',
+            success: false,
+            error: err instanceof Error ? err.message : '未知错误',
+            details: err
+          });
+        }
+
+        // 汇总结果
+        const hasAnySuccess = dbTests.some(test => test.success);
+        const hasAnyError = dbTests.some(test => !test.success);
+
+        if (hasAnySuccess && !hasAnyError) {
+          testResults[3] = {
+            name: '数据库访问测试',
+            status: 'success',
+            message: '✅ 数据库连接正常',
+            details: { tests: dbTests }
+          };
+        } else if (hasAnySuccess) {
           testResults[3] = {
             name: '数据库访问测试',
             status: 'error',
-            message: '❌ 数据库访问失败',
-            details: error.message
+            message: '⚠️ 部分数据库功能异常',
+            details: { tests: dbTests }
           };
         } else {
           testResults[3] = {
             name: '数据库访问测试',
-            status: 'success',
-            message: '✅ 数据库连接正常'
+            status: 'error',
+            message: '❌ 数据库访问失败',
+            details: { tests: dbTests }
           };
         }
+
       } catch (error) {
         testResults[3] = {
           name: '数据库访问测试',
           status: 'error',
           message: '❌ 数据库测试异常',
+          details: {
+            error: error instanceof Error ? error.message : '未知错误',
+            stack: error instanceof Error ? error.stack : null
+          }
+        };
+      }
+
+      // 测试 5: 测试 RLS 策略
+      testResults.push({
+        name: 'RLS 策略测试',
+        status: 'pending',
+        message: '正在测试行级安全策略...'
+      });
+      setTests([...testResults]);
+
+      try {
+        // 测试未认证用户的插入权限
+        const { data: insertData, error: insertError } = await supabase
+          .from('contact_messages')
+          .insert({
+            name: 'Test User',
+            email: 'test@example.com',
+            subject: 'Test Subject',
+            message: 'Test message for RLS testing'
+          })
+          .select();
+
+        if (insertError) {
+          testResults[4] = {
+            name: 'RLS 策略测试',
+            status: 'error',
+            message: '❌ RLS 策略测试失败',
+            details: {
+              error: insertError.message,
+              code: insertError.code,
+              hint: insertError.hint
+            }
+          };
+        } else {
+          testResults[4] = {
+            name: 'RLS 策略测试',
+            status: 'success',
+            message: '✅ RLS 策略正常',
+            details: { insertedId: insertData?.[0]?.id }
+          };
+
+          // 清理测试数据
+          if (insertData?.[0]?.id) {
+            await supabase
+              .from('contact_messages')
+              .delete()
+              .eq('id', insertData[0].id);
+          }
+        }
+      } catch (error) {
+        testResults[4] = {
+          name: 'RLS 策略测试',
+          status: 'error',
+          message: '❌ RLS 策略测试异常',
           details: error instanceof Error ? error.message : '未知错误'
         };
       }
