@@ -9,6 +9,7 @@ import { locales } from "@/i18n";
 import { getTranslations } from "@/utils/loadTranslations";
 import Script from "next/script";
 import { generateStructuredData, generateOrganizationStructuredData } from "@/lib/seo";
+import { AuthProvider } from "@/contexts/auth-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -128,13 +129,15 @@ export default async function RootLayout({
         />
       </head>
       <body className={inter.className} suppressHydrationWarning>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-        </NextIntlClientProvider>
+        <AuthProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <div className="flex flex-col min-h-screen">
+              <Header />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+            </div>
+          </NextIntlClientProvider>
+        </AuthProvider>
         
         {/* 预加载内容翻译的脚本 */}
         <Script id="preload-translations" strategy="afterInteractive">

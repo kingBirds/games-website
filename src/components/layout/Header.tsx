@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { locales } from '@/i18n';
 import { getTranslations } from '@/utils/loadTranslations';
 import { useMobileCategoryBar } from '@/hooks/useMobileCategoryBar';
+import { UserMenu } from './user-menu';
 
 
 export const Header = () => {
@@ -174,24 +175,30 @@ export const Header = () => {
               </button>
             </form>
             
-            {/* 右侧：语言切换 */}
-            <div className="relative group">
-              <button className="flex items-center hover:text-blue-400 transition">
-                <span>{getLanguageName(locale)}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              <div className="absolute right-0 mt-2 w-32 bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                {locales.map((lang) => (
-                  <button 
-                    key={lang}
-                    onClick={() => changeLanguage(lang)} 
-                    className={`block w-full text-left px-4 py-2 hover:bg-gray-700 ${locale === lang ? 'bg-gray-700' : ''}`}
-                  >
-                    {getLanguageName(lang)}
-                  </button>
-                ))}
+            {/* 右侧：用户菜单和语言切换 */}
+            <div className="flex items-center space-x-4">
+              {/* 用户菜单 */}
+              <UserMenu locale={locale} />
+              
+              {/* 语言切换 */}
+              <div className="relative group">
+                <button className="flex items-center hover:text-blue-400 transition">
+                  <span>{getLanguageName(locale)}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className="absolute right-0 mt-2 w-32 bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  {locales.map((lang) => (
+                    <button 
+                      key={lang}
+                      onClick={() => changeLanguage(lang)} 
+                      className={`block w-full text-left px-4 py-2 hover:bg-gray-700 ${locale === lang ? 'bg-gray-700' : ''}`}
+                    >
+                      {getLanguageName(lang)}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </nav>
@@ -200,7 +207,7 @@ export const Header = () => {
 
       {/* 移动端Header */}
       <div className="md:hidden">
-        {/* 顶部栏：Logo + 分类按钮 + 搜索图标 + 语言按钮 */}
+        {/* 顶部栏：Logo + 按钮组 */}
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <Link href={`/${locale}`} className="text-xl font-bold hover:text-blue-400 transition">
             FreeCasualGame
@@ -228,6 +235,11 @@ export const Header = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0z" />
               </svg>
             </button>
+            
+            {/* 用户菜单 - 移动端 */}
+            <div className="relative">
+              <UserMenu locale={locale} />
+            </div>
             
             {/* 语言按钮 */}
             <button 
