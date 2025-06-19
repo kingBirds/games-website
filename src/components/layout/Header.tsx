@@ -11,8 +11,8 @@ import { useMobileCategoryBar } from '@/hooks/useMobileCategoryBar';
 export const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileSearchQuery, setMobileSearchQuery] = useState('');
   
@@ -40,6 +40,16 @@ export const Header = () => {
       case 'es': return 'Español';
       case 'en': 
       default: return 'English';
+    }
+  };
+
+  // 获取简短语言显示名称
+  const getShortLanguageName = (lang: string) => {
+    switch (lang) {
+      case 'zh': return '中文';
+      case 'es': return 'ES';
+      case 'en': 
+      default: return 'EN';
     }
   };
   
@@ -75,7 +85,6 @@ export const Header = () => {
   const handleSearch = (query: string) => {
     if (query.trim()) {
       router.push(`/${locale}/search?q=${encodeURIComponent(query.trim())}`);
-      setIsMenuOpen(false); // 关闭移动端菜单
       setIsSearchOpen(false); // 关闭搜索框
       setMobileSearchQuery(''); // 清空搜索框
     }
@@ -104,15 +113,27 @@ export const Header = () => {
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
     if (!isSearchOpen) {
-      setIsMenuOpen(false); // 关闭菜单
+      setIsLanguageMenuOpen(false); // 关闭语言菜单
     }
   };
 
   // 处理分类按钮点击
   const handleCategoryToggle = () => {
     toggleCategoryBar();
-    setIsMenuOpen(false); // 关闭主菜单
     setIsSearchOpen(false); // 关闭搜索框
+    setIsLanguageMenuOpen(false); // 关闭语言菜单
+  };
+
+  // 处理语言菜单切换
+  const toggleLanguageMenu = () => {
+    setIsLanguageMenuOpen(!isLanguageMenuOpen);
+    setIsSearchOpen(false); // 关闭搜索框
+  };
+
+  // 处理语言选择
+  const handleLanguageSelect = (lang: string) => {
+    changeLanguage(lang);
+    setIsLanguageMenuOpen(false);
   };
 
   return (
@@ -179,9 +200,9 @@ export const Header = () => {
 
       {/* 移动端Header */}
       <div className="md:hidden">
-        {/* 顶部栏：Logo + 分类按钮 + 搜索图标 + 菜单按钮 */}
+        {/* 顶部栏：Logo + 分类按钮 + 搜索图标 + 语言按钮 */}
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <Link href={`/${locale}`} className="text-xl font-bold">
+          <Link href={`/${locale}`} className="text-xl font-bold hover:text-blue-400 transition">
             FreeCasualGame
           </Link>
           
@@ -208,21 +229,13 @@ export const Header = () => {
               </svg>
             </button>
             
-            {/* 菜单按钮 */}
+            {/* 语言按钮 */}
             <button 
-              className={`text-white p-2 hover:bg-gray-700 rounded transition ${isMenuOpen ? 'bg-blue-600' : ''}`}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+              className={`text-white px-3 py-2 hover:bg-gray-700 rounded transition text-sm font-medium ${isLanguageMenuOpen ? 'bg-blue-600' : ''}`}
+              onClick={toggleLanguageMenu}
+              aria-label="Language"
             >
-              {isMenuOpen ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
+              {getShortLanguageName(locale)}
             </button>
           </div>
         </div>
@@ -253,31 +266,17 @@ export const Header = () => {
             </div>
           </div>
         )}
-      </div>
-      
-      {/* 移动端导航菜单 */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-gray-800 border-t border-gray-700">
-          <div className="px-4 py-4 space-y-4">
-            <Link 
-              href={`/${locale}`} 
-              className="block hover:text-blue-400 transition py-2 text-lg"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t.nav.home}
-            </Link>
-            
-            {/* 移动端语言切换 */}
-            <div className="border-t border-gray-700 pt-4">
-              <p className="text-gray-400 mb-3 font-medium">{t.nav.language || 'Language'}</p>
+
+        {/* 移动端语言切换菜单 */}
+        {isLanguageMenuOpen && (
+          <div className="container mx-auto px-4 pb-3 border-t border-gray-700 bg-gray-800">
+            <div className="pt-3">
+              <p className="text-gray-400 mb-3 font-medium text-sm">{t.nav.language || 'Language'}</p>
               <div className="grid grid-cols-3 gap-2">
                 {locales.map((lang) => (
                   <button 
                     key={lang}
-                    onClick={() => {
-                      changeLanguage(lang);
-                      setIsMenuOpen(false);
-                    }} 
+                    onClick={() => handleLanguageSelect(lang)} 
                     className={`text-center py-2 px-3 rounded-lg transition ${
                       locale === lang 
                         ? 'bg-blue-600 text-white' 
@@ -290,8 +289,8 @@ export const Header = () => {
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   );
 }; 
