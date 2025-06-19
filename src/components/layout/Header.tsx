@@ -11,6 +11,8 @@ export const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [mobileSearchQuery, setMobileSearchQuery] = useState('');
   
   // 从路径中提取当前语言
   const getCurrentLocale = () => {
@@ -64,6 +66,33 @@ export const Header = () => {
     router.push(newPath);
   };
 
+  // 处理搜索提交
+  const handleSearch = (query: string) => {
+    if (query.trim()) {
+      router.push(`/${locale}/search?q=${encodeURIComponent(query.trim())}`);
+      setIsMenuOpen(false); // 关闭移动端菜单
+    }
+  };
+
+  // 处理桌面搜索框提交
+  const handleDesktopSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSearch(searchQuery);
+  };
+
+  // 处理移动端搜索框提交
+  const handleMobileSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSearch(mobileSearchQuery);
+  };
+
+  // 处理键盘事件
+  const handleKeyPress = (e: React.KeyboardEvent, query: string) => {
+    if (e.key === 'Enter') {
+      handleSearch(query);
+    }
+  };
+
   return (
     <header className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -81,18 +110,24 @@ export const Header = () => {
           </Link>
           
           {/* 中间：响应式搜索框 */}
-          <div className="relative flex-1 max-w-md mx-8">
+          <form onSubmit={handleDesktopSearchSubmit} className="relative flex-1 max-w-md mx-8">
             <input
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyPress={(e) => handleKeyPress(e, searchQuery)}
               placeholder={t.nav.search}
               className="bg-gray-800 text-white px-4 py-2 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             />
-            <button className="absolute right-3 top-2">
+            <button 
+              type="submit"
+              className="absolute right-3 top-2 hover:text-blue-400 transition"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0z" />
               </svg>
             </button>
-          </div>
+          </form>
           
           {/* 右侧：语言切换 */}
           <div className="relative group">
@@ -149,18 +184,24 @@ export const Header = () => {
             </Link>
             
             {/* 移动端搜索框 */}
-            <div className="relative">
+            <form onSubmit={handleMobileSearchSubmit} className="relative">
               <input
                 type="text"
+                value={mobileSearchQuery}
+                onChange={(e) => setMobileSearchQuery(e.target.value)}
+                onKeyPress={(e) => handleKeyPress(e, mobileSearchQuery)}
                 placeholder={t.nav.search}
                 className="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
               />
-              <button className="absolute right-3 top-1/2 transform -translate-y-1/2">
+              <button 
+                type="submit"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:text-blue-400 transition"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0z" />
                 </svg>
               </button>
-            </div>
+            </form>
             
             {/* 移动端语言切换 */}
             <div className="border-t border-gray-700 pt-4">
