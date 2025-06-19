@@ -159,14 +159,12 @@ export default async function RootLayout({
                   .then(data => {
                     window.__contentTranslations = window.__contentTranslations || {};
                     window.__contentTranslations['${locale}'] = data;
-                    console.log(\`Content translations preloaded for: ${locale}\`);
                   })
                   .catch(err => {
-                    console.error('Failed to preload translations:', err);
-                    console.error('Response status:', err.message);
+                    // 静默处理预加载失败
                   });
               } catch (e) {
-                console.error('Error in preload script:', e);
+                // 静默处理脚本错误
               }
             })();
           `}

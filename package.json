@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "update-games-data": "node scripts/update-games-data.js",
-    "test-cache": "node test-cache-api.js"
+    "update-games-data": "node scripts/update-games-data.js"
   },
   "dependencies": {
     "@supabase/ssr": "^0.6.1",

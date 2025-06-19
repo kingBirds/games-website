@@ -78,7 +78,6 @@ export const Header = () => {
       newPath = `/${newLocale}`;
     }
     
-    console.log(`[Header] Changing language from ${locale} to ${newLocale}, new path: ${newPath}`);
     router.push(newPath);
   };
 

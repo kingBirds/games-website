@@ -120,7 +120,7 @@ class GameDataSchedulerLite {
         console.log('🔄 Cache is invalid, triggering immediate update...');
         await this.triggerUpdate();
       } else {
-        console.log('✅ Cache is valid, no immediate update needed');
+        // Cache is valid
       }
     } catch (error) {
       console.error('❌ Error checking cache validity:', error);
@@ -130,25 +130,18 @@ class GameDataSchedulerLite {
   // 模拟启动（实际的定时任务需要在系统层面配置）
   async start(): Promise<void> {
     if (!isServer()) {
-      console.log('⚠️  Scheduler can only run on server side');
       return;
     }
 
     if (this.isInitialized) {
-      console.log('⚠️  Scheduler is already initialized');
       return;
     }
 
-    console.log(`🕒 Initializing game data scheduler...`);
-    console.log(`📅 Configured schedule: ${this.config.updateTime} (${this.config.timezone})`);
-    console.log(`💡 Note: Actual scheduling should be configured at system level (cron/systemd)`);
-
+    // 初始化调度器配置
     this.isInitialized = true;
     
     // 设置下次运行时间（仅供显示）
     this.updateNextRunTime();
-    
-    console.log('✅ Game data scheduler initialized');
   }
 
   // 停止（仅标记）

@@ -9,18 +9,14 @@ let isInitialized = false;
 // 初始化服务器
 export async function initializeServer(): Promise<void> {
   if (isInitialized) {
-    console.log('🔄 Server already initialized, skipping...');
     return;
   }
 
   try {
-    console.log('🚀 Initializing server...');
-    
     // 初始化游戏数据调度器
     await initializeScheduler();
     
     isInitialized = true;
-    console.log('✅ Server initialization completed');
   } catch (error) {
     console.error('❌ Server initialization failed:', error);
     // 不要阻止应用启动，只是记录错误

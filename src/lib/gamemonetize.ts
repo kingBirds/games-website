@@ -85,8 +85,6 @@ export async function fetchGameMonetizeGames(
     // 构建API URL
     const apiUrl = `https://rss.gamemonetize.com/rssfeed.php?format=json&category=${category}&type=html5&popularity=${popularity}&company=All&amount=${amount}`;
     
-    console.log('Fetching games from GameMonetize API:', apiUrl);
-    
     // 发送请求
     const response = await fetch(apiUrl, {
       method: 'GET',
@@ -107,8 +105,6 @@ export async function fetchGameMonetizeGames(
     if (!Array.isArray(data)) {
       throw new Error('Invalid API response format');
     }
-    
-    console.log(`Fetched ${data.length} games from GameMonetize API`);
     
     // 转换数据格式
     return data.map(convertApiGameToGameFormat);
