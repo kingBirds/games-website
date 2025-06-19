@@ -8,14 +8,20 @@ import { POPULARITY_OPTIONS, POPULARITY_LABELS, PopularityType } from '@/lib/gam
 interface MobileCategoryBarProps {
   locale: string;
   className?: string;
+  onCategorySelect?: () => void;
 }
 
-export const MobileCategoryBar = ({ locale, className = "" }: MobileCategoryBarProps) => {
+export const MobileCategoryBar = ({ locale, className = "", onCategorySelect }: MobileCategoryBarProps) => {
   const pathname = usePathname();
 
   // 检查链接是否激活
   const isActiveLink = (href: string) => {
     return pathname === href || pathname.startsWith(href + '/');
+  };
+
+  // 处理分类点击
+  const handleCategoryClick = () => {
+    onCategorySelect?.();
   };
 
   // 热门分类（前6个）
@@ -42,6 +48,7 @@ export const MobileCategoryBar = ({ locale, className = "" }: MobileCategoryBarP
                 <Link
                   key={popularityType}
                   href={href}
+                  onClick={handleCategoryClick}
                   className={`px-3 py-2 rounded-lg text-sm text-center transition-colors ${
                     isActive 
                       ? 'bg-blue-600 text-white' 
@@ -70,6 +77,7 @@ export const MobileCategoryBar = ({ locale, className = "" }: MobileCategoryBarP
                 <Link
                   key={category.id}
                   href={href}
+                  onClick={handleCategoryClick}
                   className={`px-3 py-2 rounded-lg text-sm text-center transition-colors ${
                     isActive 
                       ? 'bg-blue-600 text-white' 
@@ -84,6 +92,7 @@ export const MobileCategoryBar = ({ locale, className = "" }: MobileCategoryBarP
             {/* 查看全部链接 */}
             <Link
               href={`/${locale}/categories`}
+              onClick={handleCategoryClick}
               className="px-3 py-2 rounded-lg text-sm text-center bg-gray-200 text-gray-600 hover:bg-gray-300 transition-colors border-2 border-dashed border-gray-400"
             >
               {locale === 'zh' ? '查看全部' : locale === 'es' ? 'Ver todos' : 'View All'}

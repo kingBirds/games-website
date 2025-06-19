@@ -3,6 +3,7 @@
 import { Sidebar } from './Sidebar';
 import { MobileCategoryBar } from './MobileCategoryBar';
 import { useState } from 'react';
+import { useMobileCategoryBar } from '@/hooks/useMobileCategoryBar';
 
 interface SidebarLayoutProps {
   children: React.ReactNode;
@@ -12,6 +13,11 @@ interface SidebarLayoutProps {
 
 export const SidebarLayout = ({ children, locale, className = "" }: SidebarLayoutProps) => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const { isCategoryBarOpen, hideCategoryBar } = useMobileCategoryBar();
+
+  const handleCategorySelect = () => {
+    hideCategoryBar();
+  };
 
   return (
     <div className={`min-h-screen ${className}`}>
@@ -23,7 +29,12 @@ export const SidebarLayout = ({ children, locale, className = "" }: SidebarLayou
       />
       
       {/* 移动端分类导航条 */}
-      <MobileCategoryBar locale={locale} />
+      {isCategoryBarOpen && (
+        <MobileCategoryBar 
+          locale={locale} 
+          onCategorySelect={handleCategorySelect}
+        />
+      )}
       
       {/* 主内容区域 */}
       <main className={`bg-gray-100 transition-all duration-300 min-h-screen

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { locales } from '@/i18n';
 import { getTranslations } from '@/utils/loadTranslations';
 import { GAME_CATEGORIES, getCategoryName } from '@/lib/game-categories';
+import { useMobileCategoryBar } from '@/hooks/useMobileCategoryBar';
 
 
 export const Header = () => {
@@ -15,6 +16,9 @@ export const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileSearchQuery, setMobileSearchQuery] = useState('');
+  
+  // 使用移动端分类导航条状态管理
+  const { isCategoryBarOpen, toggleCategoryBar } = useMobileCategoryBar();
   
   // 从路径中提取当前语言
   const getCurrentLocale = () => {
@@ -105,6 +109,13 @@ export const Header = () => {
     }
   };
 
+  // 处理分类按钮点击
+  const handleCategoryToggle = () => {
+    toggleCategoryBar();
+    setIsMenuOpen(false); // 关闭主菜单
+    setIsSearchOpen(false); // 关闭搜索框
+  };
+
   return (
     <header className="bg-gray-900 text-white">
       {/* 桌面端Header */}
@@ -169,16 +180,27 @@ export const Header = () => {
 
       {/* 移动端Header */}
       <div className="md:hidden">
-        {/* 顶部栏：Logo + 搜索图标 + 菜单按钮 */}
+        {/* 顶部栏：Logo + 分类按钮 + 搜索图标 + 菜单按钮 */}
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <Link href={`/${locale}`} className="text-xl font-bold">
             FreeCasualGame
           </Link>
           
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2">
+            {/* 分类按钮 */}
+            <button 
+              className={`text-white p-2 hover:bg-gray-700 rounded transition ${isCategoryBarOpen ? 'bg-blue-600' : ''}`}
+              onClick={handleCategoryToggle}
+              aria-label="Categories"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14-7H5m14 14H5" />
+              </svg>
+            </button>
+            
             {/* 搜索图标 */}
             <button 
-              className="text-white p-2 hover:bg-gray-700 rounded transition"
+              className={`text-white p-2 hover:bg-gray-700 rounded transition ${isSearchOpen ? 'bg-blue-600' : ''}`}
               onClick={toggleSearch}
               aria-label="Search"
             >
@@ -189,7 +211,7 @@ export const Header = () => {
             
             {/* 菜单按钮 */}
             <button 
-              className="text-white p-2 hover:bg-gray-700 rounded transition"
+              className={`text-white p-2 hover:bg-gray-700 rounded transition ${isMenuOpen ? 'bg-blue-600' : ''}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
