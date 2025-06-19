@@ -1,7 +1,3 @@
-import { Features } from '@/components/sections/Features';
-import { HowItWorks } from '@/components/sections/HowItWorks';
-import { Testimonials } from '@/components/sections/Testimonials';
-import { FAQ } from '@/components/sections/FAQ';
 import { GameSection } from '@/components/games/GameSection';
 import { SidebarLayout } from '@/components/layout/SidebarLayout';
 import { notFound } from 'next/navigation';
@@ -50,11 +46,6 @@ export default async function Home({
             />
           );
         })}
-        
-        <Features />
-        <HowItWorks />
-        <Testimonials />
-        <FAQ />
       </div>
     </SidebarLayout>
   );
