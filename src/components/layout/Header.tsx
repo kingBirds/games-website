@@ -5,7 +5,6 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { locales } from '@/i18n';
 import { getTranslations } from '@/utils/loadTranslations';
-import { GAME_CATEGORIES, getCategoryName } from '@/lib/game-categories';
 import { useMobileCategoryBar } from '@/hooks/useMobileCategoryBar';
 
 
@@ -267,34 +266,6 @@ export const Header = () => {
             >
               {t.nav.home}
             </Link>
-            
-            {/* 移动端游戏分类 */}
-            <div className="border-t border-gray-700 pt-4">
-              <p className="text-gray-400 mb-3 font-medium">
-                {locale === 'zh' ? '游戏分类' : locale === 'es' ? 'Categorías' : 'Categories'}
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {GAME_CATEGORIES.slice(0, 8).map((category) => (
-                  <Link 
-                    key={category.id}
-                    href={`/${locale}/categories/${category.slug}`}
-                    className="text-center py-2 px-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition text-sm"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {getCategoryName(category.id, locale)}
-                  </Link>
-                ))}
-              </div>
-              <div className="mt-3 text-center">
-                <Link 
-                  href={`/${locale}/categories`}
-                  className="text-blue-400 hover:text-blue-300 text-sm"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {locale === 'zh' ? '查看全部分类 →' : locale === 'es' ? 'Ver todas las categorías →' : 'View all categories →'}
-                </Link>
-              </div>
-            </div>
             
             {/* 移动端语言切换 */}
             <div className="border-t border-gray-700 pt-4">
