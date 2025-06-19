@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { locales } from "@/i18n";
 import { getTranslations } from "@/utils/loadTranslations";
 import Script from "next/script";
+import { generateStructuredData, generateOrganizationStructuredData } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -75,11 +76,34 @@ export default async function RootLayout({
   // 加载语言文件
   const messages = getTranslations(locale);
 
+  // 生成结构化数据
+  const websiteStructuredData = generateStructuredData(locale, 'home');
+  const organizationStructuredData = generateOrganizationStructuredData();
+
   return (
     <html lang={locale}>
       <head>
         {/* Viewport meta tag for mobile responsiveness */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+        
+        {/* 结构化数据 */}
+        <Script
+          id="website-structured-data"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData),
+          }}
+        />
+        
+        <Script
+          id="organization-structured-data"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationStructuredData),
+          }}
+        />
         
         {/* Google Analytics */}
         <Script
