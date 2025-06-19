@@ -12,6 +12,7 @@ export const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileSearchQuery, setMobileSearchQuery] = useState('');
   
@@ -72,6 +73,8 @@ export const Header = () => {
     if (query.trim()) {
       router.push(`/${locale}/search?q=${encodeURIComponent(query.trim())}`);
       setIsMenuOpen(false); // 关闭移动端菜单
+      setIsSearchOpen(false); // 关闭搜索框
+      setMobileSearchQuery(''); // 清空搜索框
     }
   };
 
@@ -91,6 +94,14 @@ export const Header = () => {
   const handleKeyPress = (e: React.KeyboardEvent, query: string) => {
     if (e.key === 'Enter') {
       handleSearch(query);
+    }
+  };
+
+  // 切换搜索框显示状态
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+    if (!isSearchOpen) {
+      setIsMenuOpen(false); // 关闭菜单
     }
   };
 
@@ -158,50 +169,69 @@ export const Header = () => {
 
       {/* 移动端Header */}
       <div className="md:hidden">
-        {/* 顶部：Logo和菜单按钮 */}
+        {/* 顶部栏：Logo + 搜索图标 + 菜单按钮 */}
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <Link href={`/${locale}`} className="text-xl font-bold">
             FreeCasualGame
           </Link>
           
-          <button 
-            className="text-white p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-
-        {/* 中央搜索框 */}
-        <div className="container mx-auto px-4 pb-3">
-          <form onSubmit={handleMobileSearchSubmit} className="relative">
-            <input
-              type="text"
-              value={mobileSearchQuery}
-              onChange={(e) => setMobileSearchQuery(e.target.value)}
-              onKeyPress={(e) => handleKeyPress(e, mobileSearchQuery)}
-              placeholder={t.nav.search}
-              className="bg-gray-800 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-            />
+          <div className="flex items-center space-x-3">
+            {/* 搜索图标 */}
             <button 
-              type="submit"
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:text-blue-400 transition"
+              className="text-white p-2 hover:bg-gray-700 rounded transition"
+              onClick={toggleSearch}
+              aria-label="Search"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0z" />
               </svg>
             </button>
-          </form>
+            
+            {/* 菜单按钮 */}
+            <button 
+              className="text-white p-2 hover:bg-gray-700 rounded transition"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
+
+        {/* 弹出式搜索框 */}
+        {isSearchOpen && (
+          <div className="container mx-auto px-4 pb-3 border-t border-gray-700 bg-gray-800">
+            <div className="pt-3">
+              <form onSubmit={handleMobileSearchSubmit} className="relative">
+                <input
+                  type="text"
+                  value={mobileSearchQuery}
+                  onChange={(e) => setMobileSearchQuery(e.target.value)}
+                  onKeyPress={(e) => handleKeyPress(e, mobileSearchQuery)}
+                  placeholder={t.nav.search}
+                  className="bg-gray-700 text-white px-4 py-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
+                  autoFocus
+                />
+                <button 
+                  type="submit"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:text-blue-400 transition"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0z" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
       </div>
       
       {/* 移动端导航菜单 */}
