@@ -1,15 +1,23 @@
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
-// 您提供的Supabase URL
-const supabaseUrl = 'https://lysweuannqyqmwskylsu.supabase.co'
-
 export async function createClient() {
   const cookieStore = await cookies()
 
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseKey) {
+    console.error('服务端 Supabase 环境变量未配置:', {
+      hasUrl: !!supabaseUrl,
+      hasKey: !!supabaseKey,
+    });
+    throw new Error('Supabase 环境变量未正确配置');
+  }
+
   return createServerClient(
     supabaseUrl,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+    supabaseKey,
     {
       cookies: {
         getAll() {
