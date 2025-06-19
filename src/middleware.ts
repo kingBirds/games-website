@@ -7,8 +7,9 @@ import { locales, defaultLocale } from './i18n';
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   
-  // 如果是静态资源、特殊文件或一般API路由，直接返回
+  // 如果是静态资源、特殊文件或API路由，直接返回
   if (pathname.startsWith('/_next') || 
+      pathname.startsWith('/api/') ||
       pathname.startsWith('/locales/') ||
       pathname === '/ads.txt' ||
       pathname === '/robots.txt' ||
@@ -123,10 +124,10 @@ export async function middleware(request: NextRequest) {
   return redirectResponse;
 }
 
-// 匹配所有路径，但排除静态资源
+// 匹配所有路径，但排除静态资源和API路由
 export const config = {
   matcher: [
-    // 匹配所有路径，但排除静态资源和特殊文件
-    '/((?!_next/static|_next/image|favicon.ico|locales|ads.txt|robots.txt|sitemap.xml|.*\\.svg$|.*\\.png$|.*\\.jpg$|.*\\.jpeg$).*)',
+    // 匹配所有路径，但排除静态资源、API路由和特殊文件
+    '/((?!api|_next/static|_next/image|favicon.ico|locales|ads.txt|robots.txt|sitemap.xml|.*\\.svg$|.*\\.png$|.*\\.jpg$|.*\\.jpeg$).*)',
   ],
 }; 
