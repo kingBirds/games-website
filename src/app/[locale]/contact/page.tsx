@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n';
+import { ContactForm } from '@/components/contact/contact-form';
 
 interface ContactPageProps {
   params: Promise<{ locale: string }>;
@@ -53,6 +54,13 @@ export default async function ContactPage({ params }: ContactPageProps) {
         messagePlaceholder: '请详细描述您的问题、建议或合作意向...',
         submit: '发送消息',
       },
+      messages: {
+        success: '您的消息已成功发送！我们会在24小时内回复您。',
+        error: '发送失败，请稍后重试或直接通过邮件联系我们。',
+        sending: '发送中...',
+        required: '请填写所有必填字段。',
+        emailInvalid: '请输入有效的邮箱地址。'
+      },
       info: {
         title: '其他联系方式',
         response: '我们通常在24小时内回复',
@@ -96,6 +104,13 @@ export default async function ContactPage({ params }: ContactPageProps) {
         messagePlaceholder: 'Please describe your question, suggestion, or collaboration interest in detail...',
         submit: 'Send Message',
       },
+      messages: {
+        success: 'Your message has been sent successfully! We will reply within 24 hours.',
+        error: 'Failed to send message. Please try again later or contact us directly via email.',
+        sending: 'Sending...',
+        required: 'Please fill in all required fields.',
+        emailInvalid: 'Please enter a valid email address.'
+      },
       info: {
         title: 'Other Contact Methods',
         response: 'We usually respond within 24 hours',
@@ -138,6 +153,13 @@ export default async function ContactPage({ params }: ContactPageProps) {
         message: 'Mensaje',
         messagePlaceholder: 'Por favor describe tu pregunta, sugerencia o interés de colaboración en detalle...',
         submit: 'Enviar Mensaje',
+      },
+      messages: {
+        success: '¡Tu mensaje ha sido enviado exitosamente! Responderemos dentro de 24 horas.',
+        error: 'Error al enviar el mensaje. Por favor intenta más tarde o contáctanos directamente por correo.',
+        sending: 'Enviando...',
+        required: 'Por favor completa todos los campos requeridos.',
+        emailInvalid: 'Por favor ingresa una dirección de correo válida.'
       },
       info: {
         title: 'Otros Métodos de Contacto',
@@ -188,76 +210,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* 联系表单 */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              {pageContent.form.title}
-            </h2>
-            
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  {pageContent.form.name} <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder={pageContent.form.namePlaceholder}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  {pageContent.form.email} <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder={pageContent.form.emailPlaceholder}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                  {pageContent.form.subject} <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder={pageContent.form.subjectPlaceholder}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  {pageContent.form.message} <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder={pageContent.form.messagePlaceholder}
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors font-medium"
-              >
-                {pageContent.form.submit}
-              </button>
-            </form>
-          </div>
+          <ContactForm locale={locale} content={pageContent} />
 
           {/* 联系信息和FAQ */}
           <div className="space-y-8">
